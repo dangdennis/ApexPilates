@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		955178CF2448BF8600D857F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955178CE2448BF8600D857F8 /* AppDelegate.swift */; };
+		955178D12448BF8600D857F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955178D02448BF8600D857F8 /* SceneDelegate.swift */; };
+		955178D42448BF8600D857F8 /* Apex_Pilates.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 955178D22448BF8600D857F8 /* Apex_Pilates.xcdatamodeld */; };
+		955178D62448BF8600D857F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955178D52448BF8600D857F8 /* ContentView.swift */; };
+		955178D82448BF8700D857F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955178D72448BF8700D857F8 /* Assets.xcassets */; };
+		955178DB2448BF8700D857F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955178DA2448BF8700D857F8 /* Preview Assets.xcassets */; };
+		955178DE2448BF8700D857F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955178DC2448BF8700D857F8 /* LaunchScreen.storyboard */; };
+		955178E92448BF8700D857F8 /* Apex_PilatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955178E82448BF8700D857F8 /* Apex_PilatesTests.swift */; };
+		955178F42448BF8700D857F8 /* Apex_PilatesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955178F32448BF8700D857F8 /* Apex_PilatesUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		955178E52448BF8700D857F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 955178C32448BF8600D857F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 955178CA2448BF8600D857F8;
+			remoteInfo = "Apex Pilates";
+		};
+		955178F02448BF8700D857F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 955178C32448BF8600D857F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 955178CA2448BF8600D857F8;
+			remoteInfo = "Apex Pilates";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		955178CB2448BF8600D857F8 /* Apex Pilates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apex Pilates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		955178CE2448BF8600D857F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		955178D02448BF8600D857F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		955178D32448BF8600D857F8 /* Apex_Pilates.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Apex_Pilates.xcdatamodel; sourceTree = "<group>"; };
+		955178D52448BF8600D857F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		955178D72448BF8700D857F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		955178DA2448BF8700D857F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		955178DD2448BF8700D857F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		955178DF2448BF8700D857F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		955178E42448BF8700D857F8 /* Apex PilatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Apex PilatesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		955178E82448BF8700D857F8 /* Apex_PilatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apex_PilatesTests.swift; sourceTree = "<group>"; };
+		955178EA2448BF8700D857F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		955178EF2448BF8700D857F8 /* Apex PilatesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Apex PilatesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		955178F32448BF8700D857F8 /* Apex_PilatesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apex_PilatesUITests.swift; sourceTree = "<group>"; };
+		955178F52448BF8700D857F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		955178C82448BF8600D857F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		955178E12448BF8700D857F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		955178EC2448BF8700D857F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		955178C22448BF8600D857F8 = {
+			isa = PBXGroup;
+			children = (
+				955178CD2448BF8600D857F8 /* Apex Pilates */,
+				955178E72448BF8700D857F8 /* Apex PilatesTests */,
+				955178F22448BF8700D857F8 /* Apex PilatesUITests */,
+				955178CC2448BF8600D857F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		955178CC2448BF8600D857F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				955178CB2448BF8600D857F8 /* Apex Pilates.app */,
+				955178E42448BF8700D857F8 /* Apex PilatesTests.xctest */,
+				955178EF2448BF8700D857F8 /* Apex PilatesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		955178CD2448BF8600D857F8 /* Apex Pilates */ = {
+			isa = PBXGroup;
+			children = (
+				955178CE2448BF8600D857F8 /* AppDelegate.swift */,
+				955178D02448BF8600D857F8 /* SceneDelegate.swift */,
+				955178D52448BF8600D857F8 /* ContentView.swift */,
+				955178D72448BF8700D857F8 /* Assets.xcassets */,
+				955178DC2448BF8700D857F8 /* LaunchScreen.storyboard */,
+				955178DF2448BF8700D857F8 /* Info.plist */,
+				955178D22448BF8600D857F8 /* Apex_Pilates.xcdatamodeld */,
+				955178D92448BF8700D857F8 /* Preview Content */,
+			);
+			path = "Apex Pilates";
+			sourceTree = "<group>";
+		};
+		955178D92448BF8700D857F8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				955178DA2448BF8700D857F8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		955178E72448BF8700D857F8 /* Apex PilatesTests */ = {
+			isa = PBXGroup;
+			children = (
+				955178E82448BF8700D857F8 /* Apex_PilatesTests.swift */,
+				955178EA2448BF8700D857F8 /* Info.plist */,
+			);
+			path = "Apex PilatesTests";
+			sourceTree = "<group>";
+		};
+		955178F22448BF8700D857F8 /* Apex PilatesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				955178F32448BF8700D857F8 /* Apex_PilatesUITests.swift */,
+				955178F52448BF8700D857F8 /* Info.plist */,
+			);
+			path = "Apex PilatesUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		955178CA2448BF8600D857F8 /* Apex Pilates */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 955178F82448BF8700D857F8 /* Build configuration list for PBXNativeTarget "Apex Pilates" */;
+			buildPhases = (
+				955178C72448BF8600D857F8 /* Sources */,
+				955178C82448BF8600D857F8 /* Frameworks */,
+				955178C92448BF8600D857F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Apex Pilates";
+			productName = "Apex Pilates";
+			productReference = 955178CB2448BF8600D857F8 /* Apex Pilates.app */;
+			productType = "com.apple.product-type.application";
+		};
+		955178E32448BF8700D857F8 /* Apex PilatesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 955178FB2448BF8700D857F8 /* Build configuration list for PBXNativeTarget "Apex PilatesTests" */;
+			buildPhases = (
+				955178E02448BF8700D857F8 /* Sources */,
+				955178E12448BF8700D857F8 /* Frameworks */,
+				955178E22448BF8700D857F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				955178E62448BF8700D857F8 /* PBXTargetDependency */,
+			);
+			name = "Apex PilatesTests";
+			productName = "Apex PilatesTests";
+			productReference = 955178E42448BF8700D857F8 /* Apex PilatesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		955178EE2448BF8700D857F8 /* Apex PilatesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 955178FE2448BF8700D857F8 /* Build configuration list for PBXNativeTarget "Apex PilatesUITests" */;
+			buildPhases = (
+				955178EB2448BF8700D857F8 /* Sources */,
+				955178EC2448BF8700D857F8 /* Frameworks */,
+				955178ED2448BF8700D857F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				955178F12448BF8700D857F8 /* PBXTargetDependency */,
+			);
+			name = "Apex PilatesUITests";
+			productName = "Apex PilatesUITests";
+			productReference = 955178EF2448BF8700D857F8 /* Apex PilatesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		955178C32448BF8600D857F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = dlab;
+				TargetAttributes = {
+					955178CA2448BF8600D857F8 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					955178E32448BF8700D857F8 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 955178CA2448BF8600D857F8;
+					};
+					955178EE2448BF8700D857F8 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 955178CA2448BF8600D857F8;
+					};
+				};
+			};
+			buildConfigurationList = 955178C62448BF8600D857F8 /* Build configuration list for PBXProject "Apex Pilates" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 955178C22448BF8600D857F8;
+			productRefGroup = 955178CC2448BF8600D857F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				955178CA2448BF8600D857F8 /* Apex Pilates */,
+				955178E32448BF8700D857F8 /* Apex PilatesTests */,
+				955178EE2448BF8700D857F8 /* Apex PilatesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		955178C92448BF8600D857F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				955178DE2448BF8700D857F8 /* LaunchScreen.storyboard in Resources */,
+				955178DB2448BF8700D857F8 /* Preview Assets.xcassets in Resources */,
+				955178D82448BF8700D857F8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		955178E22448BF8700D857F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		955178ED2448BF8700D857F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		955178C72448BF8600D857F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				955178CF2448BF8600D857F8 /* AppDelegate.swift in Sources */,
+				955178D42448BF8600D857F8 /* Apex_Pilates.xcdatamodeld in Sources */,
+				955178D62448BF8600D857F8 /* ContentView.swift in Sources */,
+				955178D12448BF8600D857F8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		955178E02448BF8700D857F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				955178E92448BF8700D857F8 /* Apex_PilatesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		955178EB2448BF8700D857F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				955178F42448BF8700D857F8 /* Apex_PilatesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		955178E62448BF8700D857F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 955178CA2448BF8600D857F8 /* Apex Pilates */;
+			targetProxy = 955178E52448BF8700D857F8 /* PBXContainerItemProxy */;
+		};
+		955178F12448BF8700D857F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 955178CA2448BF8600D857F8 /* Apex Pilates */;
+			targetProxy = 955178F02448BF8700D857F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		955178DC2448BF8700D857F8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				955178DD2448BF8700D857F8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		955178F62448BF8700D857F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		955178F72448BF8700D857F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		955178F92448BF8700D857F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Apex Pilates/Preview Content\"";
+				DEVELOPMENT_TEAM = G77X5S4B8C;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Apex Pilates/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dlab.app.Apex-Pilates";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		955178FA2448BF8700D857F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Apex Pilates/Preview Content\"";
+				DEVELOPMENT_TEAM = G77X5S4B8C;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Apex Pilates/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dlab.app.Apex-Pilates";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		955178FC2448BF8700D857F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G77X5S4B8C;
+				INFOPLIST_FILE = "Apex PilatesTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dlab.app.Apex-PilatesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Apex Pilates.app/Apex Pilates";
+			};
+			name = Debug;
+		};
+		955178FD2448BF8700D857F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G77X5S4B8C;
+				INFOPLIST_FILE = "Apex PilatesTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dlab.app.Apex-PilatesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Apex Pilates.app/Apex Pilates";
+			};
+			name = Release;
+		};
+		955178FF2448BF8700D857F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G77X5S4B8C;
+				INFOPLIST_FILE = "Apex PilatesUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dlab.app.Apex-PilatesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Apex Pilates";
+			};
+			name = Debug;
+		};
+		955179002448BF8700D857F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G77X5S4B8C;
+				INFOPLIST_FILE = "Apex PilatesUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dlab.app.Apex-PilatesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Apex Pilates";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		955178C62448BF8600D857F8 /* Build configuration list for PBXProject "Apex Pilates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955178F62448BF8700D857F8 /* Debug */,
+				955178F72448BF8700D857F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		955178F82448BF8700D857F8 /* Build configuration list for PBXNativeTarget "Apex Pilates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955178F92448BF8700D857F8 /* Debug */,
+				955178FA2448BF8700D857F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		955178FB2448BF8700D857F8 /* Build configuration list for PBXNativeTarget "Apex PilatesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955178FC2448BF8700D857F8 /* Debug */,
+				955178FD2448BF8700D857F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		955178FE2448BF8700D857F8 /* Build configuration list for PBXNativeTarget "Apex PilatesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955178FF2448BF8700D857F8 /* Debug */,
+				955179002448BF8700D857F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		955178D22448BF8600D857F8 /* Apex_Pilates.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				955178D32448BF8600D857F8 /* Apex_Pilates.xcdatamodel */,
+			);
+			currentVersion = 955178D32448BF8600D857F8 /* Apex_Pilates.xcdatamodel */;
+			path = Apex_Pilates.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 955178C32448BF8600D857F8 /* Project object */;
+}
