@@ -22,6 +22,12 @@ struct ContentView: View {
                     Image(systemName: "bolt.fill")
                     Text("Workouts")
             }
+            
+            ExercisesView()
+                .tabItem {
+                    Image(systemName: "flame.fill")
+                    Text("Exercises")
+            }
         }
     }
 }

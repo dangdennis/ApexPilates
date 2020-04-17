@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		950806652449367E006B42D3 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950806642449367E006B42D3 /* WorkoutsView.swift */; };
 		9508066724493714006B42D3 /* ClientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9508066624493714006B42D3 /* ClientsView.swift */; };
+		9546DA0A244938D2004922BC /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9546DA09244938D2004922BC /* ExercisesView.swift */; };
 		955178CF2448BF8600D857F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955178CE2448BF8600D857F8 /* AppDelegate.swift */; };
 		955178D12448BF8600D857F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955178D02448BF8600D857F8 /* SceneDelegate.swift */; };
-		955178D42448BF8600D857F8 /* Apex_Pilates.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 955178D22448BF8600D857F8 /* Apex_Pilates.xcdatamodeld */; };
 		955178D62448BF8600D857F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955178D52448BF8600D857F8 /* ContentView.swift */; };
 		955178D82448BF8700D857F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955178D72448BF8700D857F8 /* Assets.xcassets */; };
 		955178DB2448BF8700D857F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955178DA2448BF8700D857F8 /* Preview Assets.xcassets */; };
@@ -21,6 +21,7 @@
 		955662552449058E005BF19A /* Client+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955662542449058E005BF19A /* Client+Extension.swift */; };
 		9556625724490607005BF19A /* Workout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556625624490607005BF19A /* Workout+Extension.swift */; };
 		955662592449061B005BF19A /* Exercise+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955662582449061B005BF19A /* Exercise+Extension.swift */; };
+		95A3DAB3244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95A3DAB1244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,10 +44,10 @@
 /* Begin PBXFileReference section */
 		950806642449367E006B42D3 /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		9508066624493714006B42D3 /* ClientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsView.swift; sourceTree = "<group>"; };
+		9546DA09244938D2004922BC /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
 		955178CB2448BF8600D857F8 /* Apex Pilates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apex Pilates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		955178CE2448BF8600D857F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		955178D02448BF8600D857F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		955178D32448BF8600D857F8 /* Apex_Pilates.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Apex_Pilates.xcdatamodel; sourceTree = "<group>"; };
 		955178D52448BF8600D857F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		955178D72448BF8700D857F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		955178DA2448BF8700D857F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		955662542449058E005BF19A /* Client+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+Extension.swift"; sourceTree = "<group>"; };
 		9556625624490607005BF19A /* Workout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Workout+Extension.swift"; sourceTree = "<group>"; };
 		955662582449061B005BF19A /* Exercise+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+Extension.swift"; sourceTree = "<group>"; };
+		95A3DAB2244A032400E7E4E5 /* Apex_Pilates.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Apex_Pilates.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,16 +114,17 @@
 			isa = PBXGroup;
 			children = (
 				955178DF2448BF8700D857F8 /* Info.plist */,
-				9508066624493714006B42D3 /* ClientsView.swift */,
 				955178CE2448BF8600D857F8 /* AppDelegate.swift */,
 				955662542449058E005BF19A /* Client+Extension.swift */,
+				9508066624493714006B42D3 /* ClientsView.swift */,
 				955178D52448BF8600D857F8 /* ContentView.swift */,
+				95A3DAB1244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld */,
 				955662582449061B005BF19A /* Exercise+Extension.swift */,
+				9546DA09244938D2004922BC /* ExercisesView.swift */,
 				955178D02448BF8600D857F8 /* SceneDelegate.swift */,
 				9556625624490607005BF19A /* Workout+Extension.swift */,
 				950806642449367E006B42D3 /* WorkoutsView.swift */,
 				955178D72448BF8700D857F8 /* Assets.xcassets */,
-				955178D22448BF8600D857F8 /* Apex_Pilates.xcdatamodeld */,
 				955178DC2448BF8700D857F8 /* LaunchScreen.storyboard */,
 				955178D92448BF8700D857F8 /* Preview Content */,
 			);
@@ -288,11 +291,12 @@
 				955178CF2448BF8600D857F8 /* AppDelegate.swift in Sources */,
 				955662552449058E005BF19A /* Client+Extension.swift in Sources */,
 				955662592449061B005BF19A /* Exercise+Extension.swift in Sources */,
-				955178D42448BF8600D857F8 /* Apex_Pilates.xcdatamodeld in Sources */,
 				9556625724490607005BF19A /* Workout+Extension.swift in Sources */,
+				95A3DAB3244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld in Sources */,
 				955178D62448BF8600D857F8 /* ContentView.swift in Sources */,
 				950806652449367E006B42D3 /* WorkoutsView.swift in Sources */,
 				955178D12448BF8600D857F8 /* SceneDelegate.swift in Sources */,
+				9546DA0A244938D2004922BC /* ExercisesView.swift in Sources */,
 				9508066724493714006B42D3 /* ClientsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,12 +624,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		955178D22448BF8600D857F8 /* Apex_Pilates.xcdatamodeld */ = {
+		95A3DAB1244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				955178D32448BF8600D857F8 /* Apex_Pilates.xcdatamodel */,
+				95A3DAB2244A032400E7E4E5 /* Apex_Pilates.xcdatamodel */,
 			);
-			currentVersion = 955178D32448BF8600D857F8 /* Apex_Pilates.xcdatamodel */;
+			currentVersion = 95A3DAB2244A032400E7E4E5 /* Apex_Pilates.xcdatamodel */;
 			path = Apex_Pilates.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

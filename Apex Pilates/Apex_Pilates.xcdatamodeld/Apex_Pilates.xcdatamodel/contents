@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E266" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Client" representedClassName="Client" syncable="YES" codeGenerationType="class">
+        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
-        <fetchedProperty name="fetchedProperty" optional="YES">
-            <fetchRequest name="fetchedPropertyFetchRequest" entity="Client"/>
-        </fetchedProperty>
+        <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="clients" inverseEntity="Workout"/>
     </entity>
     <entity name="Exercise" representedClassName="Exercise" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="workouts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="exercises" inverseEntity="Workout"/>
     </entity>
     <entity name="Workout" representedClassName="Workout" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="clients" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="workouts" inverseEntity="Client"/>
+        <relationship name="exercises" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="workouts" inverseEntity="Exercise"/>
     </entity>
     <elements>
-        <element name="Client" positionX="-131.12890625" positionY="-399.0078125" width="128" height="101"/>
-        <element name="Exercise" positionX="-371.921875" positionY="-193.29296875" width="128" height="73"/>
-        <element name="Workout" positionX="-431.7578125" positionY="-372.58984375" width="128" height="73"/>
+        <element name="Client" positionX="-90.078125" positionY="-452.27734375" width="128" height="103"/>
+        <element name="Exercise" positionX="-421.203125" positionY="-252.8828125" width="128" height="88"/>
+        <element name="Workout" positionX="-394.76171875" positionY="-472.89453125" width="128" height="103"/>
     </elements>
 </model>
