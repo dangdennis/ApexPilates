@@ -10,7 +10,10 @@ import SwiftUI
 
 struct ExercisesView: View {
     @Environment(\.managedObjectContext) var context
-    @FetchRequest(entity: Exercise.entity(), sortDescriptors: []) var allExercises: FetchedResults<Exercise>
+    @FetchRequest(
+        entity: Exercise.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Exercise.order, ascending: true)]
+    ) var allExercises: FetchedResults<Exercise>
     @State private var name = ""
     
     var body: some View {
@@ -19,7 +22,7 @@ struct ExercisesView: View {
                 List {
                     ForEach(allExercises) { workout in
                         Text(workout.name ?? "")
-                    }
+                    }.onDelete(perform: deleteExercise)
                 }
                 
                 Spacer()
@@ -30,6 +33,13 @@ struct ExercisesView: View {
             }
             .navigationBarItems(trailing: EditButton())
             .navigationBarTitle(Text("Exercises"))
+        }
+    }
+    
+    func deleteExercise(offsets: IndexSet) {
+        for i in offsets {
+            let exercise = self.allExercises[i]
+            self.context.delete(exercise)
         }
     }
     
