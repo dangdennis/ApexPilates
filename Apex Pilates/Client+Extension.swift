@@ -9,5 +9,14 @@
 import Foundation
 
 extension Client {
+    public var wrappedName: String {
+        self.name ?? "Unknown client"
+    }
     
+    public var wrappedWorkouts: [Workout] {
+        let set = workouts as? Set<Workout> ?? []
+        return set.sorted {
+            $0.wrappedName < $1.wrappedName
+        }
+    }
 }

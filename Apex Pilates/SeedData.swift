@@ -16,6 +16,11 @@ public class SeedData {
     init() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.context = appDelegate.persistentContainer.viewContext
+        self.deleteAll()
+        self.seedExercises()
+        self.seedWorkouts()
+        self.seedClients()
+        self.printClients()
     }
     
     func seedExercises() {
@@ -36,39 +41,101 @@ public class SeedData {
         }
     }
     
-    func printExercises() {
-        let allExercises = findAllExercises(type: "Exercise")
-        for exercise in allExercises {
-            print("\(exercise.name ?? "") -- Type: \(exercise.type ?? "") -- \(exercise.order)")
-        }
-        
-    }
     
     func seedWorkouts() {
-        let allMatExercises = findAllExercises(type: "Exercise")
+        let allMatExercises: [Exercise] = findAllEntities(type: "Exercise")
         let newMatWorkout = Workout(context: self.context)
         newMatWorkout.id = UUID()
         newMatWorkout.name = "Pilates Mat"
-        let set = NSSet.init(array: allMatExercises)
-        newMatWorkout.exercises = set
+        newMatWorkout.exercises = NSSet(array: allMatExercises)
+    }
+    
+    
+    func seedClients() {
+        let allWorkouts: [Workout] = findAllEntities(type: "Workout")
+        let newClient = Client(context: self.context)
+        newClient.id = UUID()
+        newClient.name = "Dennis Dang"
+        newClient.workouts = NSSet(array: allWorkouts)
+    }
+    
+    func workout() -> Workout {
+        let ex1 = Exercise.init(context: self.context)
+        ex1.name = "Exercise 1"
+        ex1.id = UUID()
+        let ex2 = Exercise.init(context: self.context)
+        ex2.name = "Exercise 2"
+        ex2.id = UUID()
+        
+        let workout = Workout(context: self.context)
+        workout.addToExercises(ex1)
+        workout.addToExercises(ex2)
+        workout.name = "Pilates Mat"
+        workout.id = UUID()
+        
+        return workout
+    }
+    
+    func client() -> Client {
+        let client = Client(context: self.context)
+        client.name = "Dennis Dang"
+        client.addToWorkouts(NSSet(array: self.findAllEntities(type: "Workout")))
+        
+        return client
+    }
+    
+    func exercise() -> Exercise {
+        let exercise = Exercise(context: self.context)
+        exercise.name = "New Exercise!"
+        exercise.id = UUID()
+        
+        return exercise
+    }
+    
+    
+    func printExercises() {
+        let allExercises: [Exercise] = findAllEntities(type: "Exercise")
+        for exercise in allExercises {
+            print("\(exercise.name ?? "") -- Type: \(exercise.type ?? "") -- \(exercise.order)")
+        }
+    }
+    
+    func printWorkouts() {
+        let workouts: [Workout] = findAllEntities(type: "Workout")
+        for workout in workouts {
+            print("Workout: \(workout.wrappedName)")
+        }
+    }
+    
+    func printClients() {
+        let clients: [Client] = findAllEntities(type: "Client")
+        for client in clients {
+            print("Client: \(client.wrappedName)")
+        }
     }
     
     func deleteAll() {
-        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Exercise")
-        let req = NSBatchDeleteRequest(fetchRequest: fetch)
+        let fetchExercises = NSFetchRequest<NSFetchRequestResult>(entityName: "Exercise")
+        let deleteExercises = NSBatchDeleteRequest(fetchRequest: fetchExercises)
+        
+        let fetchWorkouts = NSFetchRequest<NSFetchRequestResult>(entityName: "Workout")
+        let deleteWorkouts = NSBatchDeleteRequest(fetchRequest: fetchWorkouts)
+        
+        let fetchClients = NSFetchRequest<NSFetchRequestResult>(entityName: "Client")
+        let deleteClients = NSBatchDeleteRequest(fetchRequest: fetchClients)
         do {
-            try self.context.execute(req)
+            try self.context.execute(deleteExercises)
+            try self.context.execute(deleteWorkouts)
+            try self.context.execute(deleteClients)
         } catch{
             print(error)
         }
     }
     
-    func findAllExercises(type: String) -> [Exercise] {
-        let req = NSFetchRequest<Exercise>(entityName: type)
-        let sortDesc = NSSortDescriptor(key: "order", ascending: true)
-        req.sortDescriptors = [sortDesc]
+    func findAllEntities<T:NSManagedObject>(type: String) -> [T] {
+        let req = NSFetchRequest<T>(entityName:type)
+        req.sortDescriptors = []
         req.resultType = .managedObjectResultType
-        
         do {
             return try self.context.fetch(req)
         } catch let error as NSError {
@@ -76,6 +143,7 @@ public class SeedData {
             return []
         }
     }
+    
 }
 
 let matExercises = [

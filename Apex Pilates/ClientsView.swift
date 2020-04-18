@@ -21,7 +21,7 @@ struct ClientsView: View {
         return NavigationView {
             VStack(alignment: .leading) {
                 List(allClients, id: \.id) { client in
-                    NavigationLink(destination: DetailedClientView(clientID: client.id ?? UUID())) {
+                    NavigationLink(destination: DetailedClientView(client: client)) {
                         Text(client.name ?? "")
                     }
                 }
@@ -30,8 +30,6 @@ struct ClientsView: View {
                     .padding(.bottom, 20)
                     .padding(.leading, 20)
             }
-                
-            .navigationBarItems(trailing: EditButton())
             .navigationBarTitle(Text("Clients"))
         }
     }

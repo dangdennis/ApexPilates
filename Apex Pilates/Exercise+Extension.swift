@@ -12,4 +12,8 @@ extension Exercise: Identifiable {
     public var wrappedName: String {
         self.name ?? "Unknown Exercise"
     }
+    
+    public var wrappedID: String {
+        self.id?.uuidString ?? ""
+    }
 }
