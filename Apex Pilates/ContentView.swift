@@ -69,36 +69,3 @@ struct DetailedClientView: View {
     //        exercises.move(fromOffsets: source, toOffset: destination)
     //    }
 }
-
-struct DetailedWorkoutView: View {
-    var clientID: UUID
-    //    @State private var exercises = mockExercises
-    
-    var body: some View {
-        Text("Detailed client view")
-        //        List {
-        //            Section(header: Text("Client")) {
-        //                Text("Dennis Dang")
-        //            }
-        //            Section(header: Text("Today's Workout")) {
-        //                ForEach(exercises) { exercise in
-        //                    Text(exercise.name)
-        //                }
-        //                .onDelete(perform: deleteExercise)
-        //                .onMove(perform: moveExercise)
-        //            }
-        //        }
-        //        .listStyle(GroupedListStyle())
-        //        .navigationBarItems(trailing: EditButton())
-    }
-    
-    //    func deleteExercise(at offsets: IndexSet) {
-    //        exercises.remove(atOffsets: offsets)
-    //    }
-    //
-    //    func moveExercise(from source: IndexSet, to destination: Int) {
-    //        exercises.move(fromOffsets: source, toOffset: destination)
-    //    }
-}
-
-

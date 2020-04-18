@@ -27,7 +27,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="clients" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="workouts" inverseEntity="Client"/>
-        <relationship name="exercises" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="workouts" inverseEntity="Exercise"/>
+        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="workouts" inverseEntity="Exercise"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>

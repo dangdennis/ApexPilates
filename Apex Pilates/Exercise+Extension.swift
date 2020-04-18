@@ -9,4 +9,7 @@
 import Foundation
 
 extension Exercise: Identifiable {
+    public var wrappedName: String {
+        self.name ?? "Unknown Exercise"
+    }
 }

@@ -18,11 +18,14 @@ struct ExercisesView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack() {
+                
                 List {
-                    ForEach(allExercises) { workout in
-                        Text(workout.name ?? "")
-                    }.onDelete(perform: deleteExercise)
+                    Section(header: Text("Mat")) {
+                        ForEach(allExercises) { workout in
+                            Text(workout.name ?? "")
+                        }.onDelete(perform: deleteExercise)
+                    }.listStyle(GroupedListStyle())
                 }
                 
                 Spacer()

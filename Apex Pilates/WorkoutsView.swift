@@ -18,8 +18,10 @@ struct WorkoutsView: View {
             VStack {
                 List {
                     ForEach(allWorkouts) { workout in
-                        Text(workout.name ?? "")
-                    }
+                        NavigationLink(destination: DetailedWorkoutView(workout: workout)) {
+                            Text(workout.wrappedName)
+                        }
+                    }.onDelete(perform: removeWorkout)
                 }
                 
                 Spacer()
@@ -45,6 +47,13 @@ struct WorkoutsView: View {
         }
         
         reset()
+    }
+    
+    func removeWorkout(offsets: IndexSet) {
+        for i in offsets {
+            let workout = self.allWorkouts[i]
+            self.context.delete(workout)
+        }
     }
     
     func reset() {

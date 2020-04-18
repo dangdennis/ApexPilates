@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let seedData = SeedData()
         seedData.deleteAll()
         seedData.seedExercises()
-        seedData.printExercises()
+        seedData.seedWorkouts()
         
         return true
     }
