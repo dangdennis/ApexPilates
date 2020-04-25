@@ -13,6 +13,20 @@ extension WorkoutSession: Identifiable {
         self.id ?? UUID()
     }
     
+    public var wrappedTitle: String {
+        self.title ?? ""
+    }
+    
+    public var wrappedCompletionDate: String {
+        guard let d = completedOn else {
+            return "No completion date"
+        }
+        let fmt = DateFormatter()
+        fmt.timeStyle = .medium
+        fmt.dateFormat = "MM-dd-yyyy"
+        return fmt.string(from: d)
+    }
+    
     public var wrappedExercises: [Exercise] {
         let set = exercises as? Set<Exercise> ?? []
         return set.sorted {

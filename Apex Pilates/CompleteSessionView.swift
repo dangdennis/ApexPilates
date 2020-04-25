@@ -1,5 +1,5 @@
 //
-//  WorkoutSessionView.swift
+//  CompleteSessionView.swift
 //  Apex Pilates
 //
 //  Created by Dennis Dang on 4/25/20.
@@ -8,8 +8,15 @@
 
 import SwiftUI
 
-struct WorkoutSessionView: View {
+struct CompleteSessionView: View {
+    @Environment(\.managedObjectContext) var context
+    @Environment(\.presentationMode) var presentation
+    
     var workout: Workout
+    var client: Client
+    
+    @State private var showPopover: Bool = false
+    @State private var sessionTitle = ""
     @State private var selectedExercises: [String: Bool] = [:]
     @State private var isOpen = false
     @State private var onlyChecked = false
@@ -21,6 +28,18 @@ struct WorkoutSessionView: View {
             }
             return true
         })
+    }
+    
+    // completeSession adds a new session of completed exercises for the prescribed client
+    private func completeSession() {
+        let d = Date()
+        let sess = WorkoutSession(context: self.context)
+        sess.completedOn = d
+        sess.id = UUID()
+        sess.title = self.sessionTitle
+        sess.addToExercises(workout.exercises ?? NSSet())
+        client.addToWorkoutSessions(sess)
+        presentation.wrappedValue.dismiss()
     }
     
     var body: some View {
@@ -48,6 +67,7 @@ struct WorkoutSessionView: View {
                         message: Text("Youre a pooper face"),
                         buttons: [
                             .default(Text("Show Only Checked"), action: { self.onlyChecked = true }),
+                            .default(Text("Complete workout"), action: { self.completeSession() }),
                             .cancel(Text("Show All"), action: { self.onlyChecked = false })
                     ])
                 })
@@ -68,7 +88,7 @@ struct WorkoutSessionView: View {
                             .font(.system(.title))
                             .frame(width: 70, height: 70)
                             .foregroundColor(Color.white)
-                        }.background(Color.blue)
+                        }.background(Color.black)
                             .cornerRadius(100)
                             .padding(.trailing, 20)
                             .padding(.bottom, 10)
@@ -81,16 +101,41 @@ struct WorkoutSessionView: View {
                 }
             }
         }
-        .navigationBarTitle(workout.wrappedName)
+        .popover( isPresented: self.$showPopover, arrowEdge: .bottom) {
+            VStack {
+                Text("Name your session")
+                HStack {
+                    TextField("Title", text: self.$sessionTitle, onCommit: {
+                        self.completeSession()
+                        self.showPopover.toggle()
+                    })
+                    Spacer()
+                    Button(action: {
+                        self.completeSession()
+                        self.showPopover.toggle()
+                    }) {
+                        Text("Submit")
+                    }
+                }
+                
+                Spacer()
+            }
+            .padding(16)
+            .padding(.top, 16)
+        }
+        .navigationBarItems(trailing: Button(action: {
+            self.showPopover.toggle()
+        }) {
+            Text("Complete Session")
+        })
+            .navigationBarTitle(workout.wrappedName)
     }
 }
 
-struct SessionView_Previews: PreviewProvider {
+struct CompleteSessionView_Previews: PreviewProvider {
     static var previews: some View {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
         let workout = SeedData().workout()
-        
         return DetailedWorkoutView(workout: workout).environment(\.managedObjectContext, context)
     }
 }

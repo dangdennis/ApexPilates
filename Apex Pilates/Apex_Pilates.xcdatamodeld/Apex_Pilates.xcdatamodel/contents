@@ -5,6 +5,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="clients" inverseEntity="Workout"/>
+        <relationship name="workoutSessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutSession" inverseName="clients" inverseEntity="WorkoutSession"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>
@@ -38,12 +39,14 @@
     <entity name="WorkoutSession" representedClassName="WorkoutSession" syncable="YES" codeGenerationType="class">
         <attribute name="completedOn" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="clients" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="workoutSessions" inverseEntity="Client"/>
         <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="sessions" inverseEntity="Exercise"/>
     </entity>
     <elements>
-        <element name="Client" positionX="-90.078125" positionY="-452.27734375" width="128" height="103"/>
+        <element name="Client" positionX="-90.078125" positionY="-452.27734375" width="128" height="118"/>
         <element name="Exercise" positionX="-421.203125" positionY="-252.8828125" width="128" height="133"/>
         <element name="Workout" positionX="-394.76171875" positionY="-472.89453125" width="128" height="103"/>
-        <element name="WorkoutSession" positionX="-190.5546875" positionY="-238.828125" width="128" height="88"/>
+        <element name="WorkoutSession" positionX="-190.5546875" positionY="-238.828125" width="128" height="118"/>
     </elements>
 </model>

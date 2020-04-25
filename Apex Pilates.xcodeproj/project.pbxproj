@@ -10,7 +10,7 @@
 		950806652449367E006B42D3 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950806642449367E006B42D3 /* WorkoutsView.swift */; };
 		9508066724493714006B42D3 /* ClientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9508066624493714006B42D3 /* ClientsView.swift */; };
 		9546DA0A244938D2004922BC /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9546DA09244938D2004922BC /* ExercisesView.swift */; };
-		954E82512454833F001EE44A /* WorkoutSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E82502454833F001EE44A /* WorkoutSessionView.swift */; };
+		954E82512454833F001EE44A /* CompleteSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E82502454833F001EE44A /* CompleteSessionView.swift */; };
 		954E825324549EB9001EE44A /* WorkoutSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E825224549EB9001EE44A /* WorkoutSession+Extension.swift */; };
 		955178CF2448BF8600D857F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955178CE2448BF8600D857F8 /* AppDelegate.swift */; };
 		955178D12448BF8600D857F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955178D02448BF8600D857F8 /* SceneDelegate.swift */; };
@@ -50,7 +50,7 @@
 		950806642449367E006B42D3 /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		9508066624493714006B42D3 /* ClientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsView.swift; sourceTree = "<group>"; };
 		9546DA09244938D2004922BC /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
-		954E82502454833F001EE44A /* WorkoutSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionView.swift; sourceTree = "<group>"; };
+		954E82502454833F001EE44A /* CompleteSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSessionView.swift; sourceTree = "<group>"; };
 		954E825224549EB9001EE44A /* WorkoutSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkoutSession+Extension.swift"; sourceTree = "<group>"; };
 		955178CB2448BF8600D857F8 /* Apex Pilates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apex Pilates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		955178CE2448BF8600D857F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 				955178D92448BF8700D857F8 /* Preview Content */,
 				955178D02448BF8600D857F8 /* SceneDelegate.swift */,
 				95A3DAB4244A06A300E7E4E5 /* SeedData.swift */,
-				954E82502454833F001EE44A /* WorkoutSessionView.swift */,
+				954E82502454833F001EE44A /* CompleteSessionView.swift */,
 				9556625624490607005BF19A /* Workout+Extension.swift */,
 				954E825224549EB9001EE44A /* WorkoutSession+Extension.swift */,
 				950806642449367E006B42D3 /* WorkoutsView.swift */,
@@ -310,7 +310,7 @@
 				9556625724490607005BF19A /* Workout+Extension.swift in Sources */,
 				95A3DAB3244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld in Sources */,
 				955178D62448BF8600D857F8 /* ContentView.swift in Sources */,
-				954E82512454833F001EE44A /* WorkoutSessionView.swift in Sources */,
+				954E82512454833F001EE44A /* CompleteSessionView.swift in Sources */,
 				95A3DAB7244A624000E7E4E5 /* DetailedWorkoutView.swift in Sources */,
 				950806652449367E006B42D3 /* WorkoutsView.swift in Sources */,
 				955178D12448BF8600D857F8 /* SceneDelegate.swift in Sources */,

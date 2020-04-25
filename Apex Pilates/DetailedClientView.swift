@@ -38,7 +38,8 @@ struct DetailedClientView_Previews: PreviewProvider {
     static var previews: some View {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let client = SeedData().client()
+        let seeder = SeedData()
+        let client = seeder.client()
         
         return DetailedClientView(client: client).environment(\.managedObjectContext, context)
     }
@@ -49,7 +50,7 @@ struct AllWorkoutsView: View {
     var body: some View {
         List {
             ForEach(client.wrappedWorkouts) { workout in
-                NavigationLink(destination: WorkoutSessionView(workout: workout)) {
+                NavigationLink(destination: CompleteSessionView(workout: workout, client: self.client)) {
                     Text(workout.wrappedName)
                 }
             }
@@ -61,9 +62,10 @@ struct AllSessionsView: View {
     var client: Client
     var body: some View {
         List {
-            ForEach(client.wrappedWorkouts) { workout in
-                NavigationLink(destination: WorkoutSessionView(workout: workout)) {
-                    Text(workout.wrappedName)
+            ForEach(client.wrappedWorkoutSessions) { session in
+                HStack {
+                    Text(session.wrappedTitle)
+                    Text(session.wrappedCompletionDate)
                 }
             }
         }

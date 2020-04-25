@@ -19,4 +19,11 @@ extension Client {
             $0.wrappedName < $1.wrappedName
         }
     }
+    
+    public var wrappedWorkoutSessions: [WorkoutSession] {
+        let set = workoutSessions as? Set<WorkoutSession> ?? []
+        return set.sorted {
+            $0.completedOn?.compare($1.completedOn ?? Date()) == .orderedDescending
+        }
+    }
 }

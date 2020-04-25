@@ -20,7 +20,7 @@ public class SeedData {
         self.seedExercises()
         self.seedWorkouts()
         self.seedClients()
-        self.printClients()
+        self.seedClientSessions()
     }
     
     func seedExercises() {
@@ -55,22 +55,36 @@ public class SeedData {
         let allWorkouts: [Workout] = findAllEntities(type: "Workout")
         let newClient = Client(context: self.context)
         newClient.id = UUID()
-        newClient.name = "Dennis Dang"
+        newClient.name = "Sample Client"
         newClient.workouts = NSSet(array: allWorkouts)
+    }
+    
+    func seedClientSessions() {
+        let allClients: [Client] = findAllEntities(type: "Client")
+        let allExercises: [Exercise] = findAllEntities(type: "Exercise")
+        let newSession = WorkoutSession(context: self.context)
+        newSession.id = UUID()
+        newSession.completedOn = Date()
+        newSession.exercises = NSSet(array:allExercises)
+        newSession.title = "Sample Session"
+        
+        for c in allClients {
+            c.workoutSessions = [newSession]
+        }
     }
     
     func workout() -> Workout {
         let ex1 = Exercise.init(context: self.context)
-        ex1.name = "Exercise 1"
+        ex1.name = "Sample Exercise 1"
         ex1.id = UUID()
         let ex2 = Exercise.init(context: self.context)
-        ex2.name = "Exercise 2"
+        ex2.name = "Sample Exercise 2"
         ex2.id = UUID()
         
         let workout = Workout(context: self.context)
         workout.addToExercises(ex1)
         workout.addToExercises(ex2)
-        workout.name = "Pilates Mat"
+        workout.name = "Sample Workout"
         workout.id = UUID()
         
         return workout
@@ -78,17 +92,28 @@ public class SeedData {
     
     func client() -> Client {
         let client = Client(context: self.context)
-        client.name = "Dennis Dang"
+        client.name = "Sample Client"
         client.addToWorkouts(NSSet(array: self.findAllEntities(type: "Workout")))
+        client.addToWorkoutSessions(NSSet(array: [self.workoutSession()]))
         
         return client
     }
     
+    func workoutSession() -> WorkoutSession {
+        let allExercises: [Exercise] = findAllEntities(type: "Exercise")
+        let newSession = WorkoutSession(context: self.context)
+        newSession.id = UUID()
+        newSession.completedOn = Date()
+        newSession.exercises = NSSet(array:allExercises)
+            
+        return newSession
+    }
+    
     func exercise() -> Exercise {
         let exercise = Exercise(context: self.context)
-        exercise.name = "New Exercise!"
+        exercise.name = "Sample Exercise!"
         exercise.id = UUID()
-        
+
         return exercise
     }
     
@@ -123,10 +148,14 @@ public class SeedData {
         
         let fetchClients = NSFetchRequest<NSFetchRequestResult>(entityName: "Client")
         let deleteClients = NSBatchDeleteRequest(fetchRequest: fetchClients)
+        
+        let fetchSessions = NSFetchRequest<NSFetchRequestResult>(entityName: "WorkoutSession")
+        let deleteWorkoutSessions = NSBatchDeleteRequest(fetchRequest: fetchSessions)
         do {
             try self.context.execute(deleteExercises)
             try self.context.execute(deleteWorkouts)
             try self.context.execute(deleteClients)
+            try self.context.execute(deleteWorkoutSessions)
         } catch{
             print(error)
         }
