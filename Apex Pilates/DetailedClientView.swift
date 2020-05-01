@@ -61,11 +61,15 @@ struct AllWorkoutsView: View {
 struct AllSessionsView: View {
     var client: Client
     var body: some View {
-        List {
+        print(client)
+        
+        return List {
             ForEach(client.wrappedWorkoutSessions) { session in
-                HStack {
-                    Text(session.wrappedTitle)
-                    Text(session.wrappedCompletionDate)
+                NavigationLink(destination: DetailedSessionView(session: session)) {
+                    HStack {
+                        Text(session.wrappedTitle)
+                        Text(session.wrappedCompletionDate)
+                    }
                 }
             }
         }

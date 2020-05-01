@@ -37,7 +37,18 @@ struct CompleteSessionView: View {
         sess.completedOn = d
         sess.id = UUID()
         sess.title = self.sessionTitle
-        sess.addToExercises(workout.exercises ?? NSSet())
+        
+        let s = (workout.exercises?.allObjects ?? []) as [Exercise]
+            
+        var selection: [Exercise] = []
+        for e in s {
+            if selectedExercises[e.wrappedID] != nil {
+                selection.append(e)
+            }
+        }
+        
+        sess.addToExercises(NSSet(array: selection))
+        
         client.addToWorkoutSessions(sess)
         presentation.wrappedValue.dismiss()
     }

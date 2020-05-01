@@ -46,10 +46,10 @@
             filePath = "Apex Pilates/DetailedClientView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "body"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "1CCB1189-EA38-47E4-A861-6C79449C8D34 - 410b1e37b1eea29d"
@@ -110,8 +110,8 @@
             filePath = "Apex Pilates/CompleteSessionView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "completeSession()"
             landmarkType = "7">
          </BreakpointContent>

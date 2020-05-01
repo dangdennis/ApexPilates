@@ -28,6 +28,7 @@
 		95A3DAB5244A06A300E7E4E5 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3DAB4244A06A300E7E4E5 /* SeedData.swift */; };
 		95A3DAB7244A624000E7E4E5 /* DetailedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3DAB6244A624000E7E4E5 /* DetailedWorkoutView.swift */; };
 		95A3DAB9244AAE3B00E7E4E5 /* DetailedClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3DAB8244AAE3B00E7E4E5 /* DetailedClientView.swift */; };
+		95B419AD245C6C2A003AA07E /* DetailedSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B419AC245C6C2A003AA07E /* DetailedSessionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		95A3DAB4244A06A300E7E4E5 /* SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
 		95A3DAB6244A624000E7E4E5 /* DetailedWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedWorkoutView.swift; sourceTree = "<group>"; };
 		95A3DAB8244AAE3B00E7E4E5 /* DetailedClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedClientView.swift; sourceTree = "<group>"; };
+		95B419AC245C6C2A003AA07E /* DetailedSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSessionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				9556625624490607005BF19A /* Workout+Extension.swift */,
 				954E825224549EB9001EE44A /* WorkoutSession+Extension.swift */,
 				950806642449367E006B42D3 /* WorkoutsView.swift */,
+				95B419AC245C6C2A003AA07E /* DetailedSessionView.swift */,
 			);
 			path = "Apex Pilates";
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			files = (
 				955178CF2448BF8600D857F8 /* AppDelegate.swift in Sources */,
 				955662552449058E005BF19A /* Client+Extension.swift in Sources */,
+				95B419AD245C6C2A003AA07E /* DetailedSessionView.swift in Sources */,
 				955662592449061B005BF19A /* Exercise+Extension.swift in Sources */,
 				95A3DAB9244AAE3B00E7E4E5 /* DetailedClientView.swift in Sources */,
 				9556625724490607005BF19A /* Workout+Extension.swift in Sources */,
