@@ -24,8 +24,16 @@ public class SeedData {
     }
     
     func seedExercises() {
+        createAndSaveExercises(exercises: matExercises, context: self.context)
+        createAndSaveExercises(exercises: reformerExercises, context: self.context)
+        createAndSaveExercises(exercises: cadillacExercises, context: self.context)
+        createAndSaveExercises(exercises: wundaChairExercises, context: self.context)
+        createAndSaveExercises(exercises: spineCorrectorExercises, context: self.context)
+    }
+    
+    func createAndSaveExercises(exercises: [(name: String, type: String)], context:  NSManagedObjectContext) {
         var order: Double = 1
-        for exercise in matExercises {
+        for exercise in exercises {
             let newExercise = Exercise(context: self.context)
             newExercise.name = exercise.name
             newExercise.id = UUID()
@@ -42,12 +50,27 @@ public class SeedData {
     }
     
     
+    
     func seedWorkouts() {
-        let allMatExercises: [Exercise] = findAllEntities(type: "Exercise")
-        let newMatWorkout = Workout(context: self.context)
-        newMatWorkout.id = UUID()
-        newMatWorkout.name = "Pilates Mat"
-        newMatWorkout.exercises = NSSet(array: allMatExercises)
+        let workoutTemplates = [
+            (name: "Pilates Mat", type: "mat"),
+            (name: "Reformer", type: "reformer"),
+            (name: "Cadillac", type: "cadillac"),
+            (name: "Wunda Chair", type: "wundaChair"),
+            (name: "Spine Corrector", type: "spineCorrector")
+        ]
+        
+        let allExercises: [Exercise] = findAllEntities(type: "Exercise")
+        
+        for workout in workoutTemplates {
+            let exercises = allExercises.filter { exercise in
+                (exercise.type ?? "") == workout.type
+            }
+            let newWorkout = Workout(context: self.context)
+            newWorkout.id = UUID()
+            newWorkout.name = workout.name
+            newWorkout.exercises = NSSet(array: exercises)
+        }
     }
     
     
@@ -105,7 +128,7 @@ public class SeedData {
         newSession.id = UUID()
         newSession.completedOn = Date()
         newSession.exercises = NSSet(array:allExercises)
-            
+        
         return newSession
     }
     
@@ -113,7 +136,7 @@ public class SeedData {
         let exercise = Exercise(context: self.context)
         exercise.name = "Sample Exercise!"
         exercise.id = UUID()
-
+        
         return exercise
     }
     
@@ -174,42 +197,3 @@ public class SeedData {
     }
     
 }
-
-let matExercises = [
-    (name: "The Hundred", type: "mat"),
-    (name: "Roll Up", type:"mat"),
-    (name: "Roll Over", type:"mat"),
-    (name: "Single Leg Circles", type:"mat"),
-    (name: "Rolling Like a Ball", type:"mat"),
-    (name: "Single Leg Stretch", type:"mat"),
-    (name: "Double Leg Stretch", type:"mat"),
-    (name: "Spine Stretch Forward", type:"mat"),
-    (name: "Open Leg Rocker", type:"mat"),
-    (name: "Corkscrew", type:"mat"),
-    (name: "Saw", type:"mat"),
-    (name: "Swan", type:"mat"),
-    (name: "Single Leg Kicks", type:"mat"),
-    (name: "Double Leg Kicks", type:"mat"),
-    (name: "Neck Pull", type:"mat"),
-    (name: "High Scissors", type:"mat"),
-    (name: "High Bicycle", type:"mat"),
-    (name: "Shoulder Bridge", type:"mat"),
-    (name: "Spine", type:"mat"),
-    (name: "Twist", type:"mat"),
-    (name: "Jackknife", type:"mat"),
-    (name: "Side Kick Series -Front/Back", type:"mat"),
-    (name: "Teaser 1", type:"mat"),
-    (name: "Teaser 2", type:"mat"),
-    (name: "Teaser 3", type:"mat"),
-    (name: "Hip Circles", type:"mat"),
-    (name: "Swimming", type:"mat"),
-    (name: "Leg Pull Front (Down)", type:"mat"),
-    (name: "Leg Pull Back (Up)", type:"mat"),
-    (name: "Kneeling Side Kicks", type:"mat"),
-    (name: "Side Bend", type:"mat"),
-    (name: "Boomerang", type:"mat"),
-    (name: "Seal Crab", type:"mat"),
-    (name: "Rocking", type:"mat"),
-    (name: "Balance Control - Roll Over", type:"mat"),
-    (name: "Push Ups", type:"mat"),
-]

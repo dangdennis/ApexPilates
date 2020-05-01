@@ -12,7 +12,11 @@ struct ExercisesView: View {
     @Environment(\.managedObjectContext) var context
     @FetchRequest(
         entity: Exercise.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \Exercise.order, ascending: true)]
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Exercise.type, ascending: true),
+            NSSortDescriptor(keyPath: \Exercise.name, ascending: true),
+            NSSortDescriptor(keyPath: \Exercise.order, ascending: true)
+        ]
     ) var allExercises: FetchedResults<Exercise>
     @State private var name = ""
     
@@ -22,7 +26,31 @@ struct ExercisesView: View {
                 
                 List {
                     Section(header: Text("Mat")) {
-                        ForEach(allExercises) { workout in
+                        ForEach(allExercises.filter{ $0.type == "mat" }) { workout in
+                            Text(workout.name ?? "")
+                        }.onDelete(perform: deleteExercise)
+                    }.listStyle(GroupedListStyle())
+                    
+                    Section(header: Text("Reformer")) {
+                        ForEach(allExercises.filter{ $0.type == "reformer" }) { workout in
+                            Text(workout.name ?? "")
+                        }.onDelete(perform: deleteExercise)
+                    }.listStyle(GroupedListStyle())
+                    
+                    Section(header: Text("Cadillac")) {
+                        ForEach(allExercises.filter{ $0.type == "cadillac" }) { workout in
+                            Text(workout.name ?? "")
+                        }.onDelete(perform: deleteExercise)
+                    }.listStyle(GroupedListStyle())
+                    
+                    Section(header: Text("Wunda")) {
+                        ForEach(allExercises.filter{ $0.type == "wundaChair" }) { workout in
+                            Text(workout.name ?? "")
+                        }.onDelete(perform: deleteExercise)
+                    }.listStyle(GroupedListStyle())
+                    
+                    Section(header: Text("Spine Corrector")) {
+                        ForEach(allExercises.filter{ $0.type == "spineCorrector" }) { workout in
                             Text(workout.name ?? "")
                         }.onDelete(perform: deleteExercise)
                     }.listStyle(GroupedListStyle())
