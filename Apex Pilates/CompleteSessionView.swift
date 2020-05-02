@@ -86,8 +86,7 @@ struct CompleteSessionView: View {
                     }
                 }.actionSheet(isPresented: $isOpen, content: {
                     ActionSheet(
-                        title: Text("Hi Megumi"),
-                        message: Text("Youre a pooper face"),
+                        title: Text("Filter"),
                         buttons: [
                             .default(Text("Show Only Checked"), action: { self.onlyChecked = true }),
                             .default(Text("Complete workout"), action: { self.completeSession() }),

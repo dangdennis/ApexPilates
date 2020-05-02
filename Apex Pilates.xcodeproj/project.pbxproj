@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		950806652449367E006B42D3 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950806642449367E006B42D3 /* WorkoutsView.swift */; };
 		9508066724493714006B42D3 /* ClientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9508066624493714006B42D3 /* ClientsView.swift */; };
+		951D7E2D245E0D32007E0017 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D7E2A245E0D32007E0017 /* Colors.swift */; };
+		951D7E2E245E0D32007E0017 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D7E2B245E0D32007E0017 /* Sizes.swift */; };
+		951D7E32245E0DDF007E0017 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D7E31245E0DDF007E0017 /* Theme.swift */; };
 		9546DA0A244938D2004922BC /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9546DA09244938D2004922BC /* ExercisesView.swift */; };
 		954E82512454833F001EE44A /* CompleteSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E82502454833F001EE44A /* CompleteSessionView.swift */; };
 		954E825324549EB9001EE44A /* WorkoutSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E825224549EB9001EE44A /* WorkoutSession+Extension.swift */; };
@@ -24,7 +27,6 @@
 		9556625724490607005BF19A /* Workout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556625624490607005BF19A /* Workout+Extension.swift */; };
 		955662592449061B005BF19A /* Exercise+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955662582449061B005BF19A /* Exercise+Extension.swift */; };
 		95747D3A245A7836008F1193 /* PilatesExercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95747D39245A7836008F1193 /* PilatesExercises.swift */; };
-		9581502C245DDCB100E12DF6 /* BasicThemeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9581502B245DDCB100E12DF6 /* BasicThemeKit */; };
 		95A3DAB3244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95A3DAB1244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld */; };
 		95A3DAB5244A06A300E7E4E5 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3DAB4244A06A300E7E4E5 /* SeedData.swift */; };
 		95A3DAB7244A624000E7E4E5 /* DetailedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3DAB6244A624000E7E4E5 /* DetailedWorkoutView.swift */; };
@@ -52,6 +54,9 @@
 /* Begin PBXFileReference section */
 		950806642449367E006B42D3 /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		9508066624493714006B42D3 /* ClientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsView.swift; sourceTree = "<group>"; };
+		951D7E2A245E0D32007E0017 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		951D7E2B245E0D32007E0017 /* Sizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
+		951D7E31245E0DDF007E0017 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		9546DA09244938D2004922BC /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
 		954E82502454833F001EE44A /* CompleteSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSessionView.swift; sourceTree = "<group>"; };
 		954E825224549EB9001EE44A /* WorkoutSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkoutSession+Extension.swift"; sourceTree = "<group>"; };
@@ -85,7 +90,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9581502C245DDCB100E12DF6 /* BasicThemeKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +110,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		951D7E30245E0D5E007E0017 /* BasicTheme */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BasicTheme;
+			sourceTree = "<group>";
+		};
 		955178C22448BF8600D857F8 = {
 			isa = PBXGroup;
 			children = (
@@ -129,12 +140,15 @@
 		955178CD2448BF8600D857F8 /* Apex Pilates */ = {
 			isa = PBXGroup;
 			children = (
+				951D7E30245E0D5E007E0017 /* BasicTheme */,
 				95A3DAB1244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld */,
 				955178CE2448BF8600D857F8 /* AppDelegate.swift */,
 				955178D72448BF8700D857F8 /* Assets.xcassets */,
 				955662542449058E005BF19A /* Client+Extension.swift */,
 				9508066624493714006B42D3 /* ClientsView.swift */,
 				954E82502454833F001EE44A /* CompleteSessionView.swift */,
+				951D7E2A245E0D32007E0017 /* Colors.swift */,
+				951D7E2B245E0D32007E0017 /* Sizes.swift */,
 				955178D52448BF8600D857F8 /* ContentView.swift */,
 				95A3DAB8244AAE3B00E7E4E5 /* DetailedClientView.swift */,
 				95A3DAB6244A624000E7E4E5 /* DetailedWorkoutView.swift */,
@@ -150,6 +164,7 @@
 				954E825224549EB9001EE44A /* WorkoutSession+Extension.swift */,
 				950806642449367E006B42D3 /* WorkoutsView.swift */,
 				95B419AC245C6C2A003AA07E /* DetailedSessionView.swift */,
+				951D7E31245E0DDF007E0017 /* Theme.swift */,
 			);
 			path = "Apex Pilates";
 			sourceTree = "<group>";
@@ -197,7 +212,6 @@
 			);
 			name = "Apex Pilates";
 			packageProductDependencies = (
-				9581502B245DDCB100E12DF6 /* BasicThemeKit */,
 			);
 			productName = "Apex Pilates";
 			productReference = 955178CB2448BF8600D857F8 /* Apex Pilates.app */;
@@ -272,7 +286,6 @@
 			);
 			mainGroup = 955178C22448BF8600D857F8;
 			packageReferences = (
-				9581502A245DDCB100E12DF6 /* XCRemoteSwiftPackageReference "BasicThemeKit" */,
 			);
 			productRefGroup = 955178CC2448BF8600D857F8 /* Products */;
 			projectDirPath = "";
@@ -318,12 +331,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				955178CF2448BF8600D857F8 /* AppDelegate.swift in Sources */,
+				951D7E2D245E0D32007E0017 /* Colors.swift in Sources */,
 				955662552449058E005BF19A /* Client+Extension.swift in Sources */,
 				95B419AD245C6C2A003AA07E /* DetailedSessionView.swift in Sources */,
 				955662592449061B005BF19A /* Exercise+Extension.swift in Sources */,
 				95A3DAB9244AAE3B00E7E4E5 /* DetailedClientView.swift in Sources */,
 				9556625724490607005BF19A /* Workout+Extension.swift in Sources */,
 				95A3DAB3244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld in Sources */,
+				951D7E2E245E0D32007E0017 /* Sizes.swift in Sources */,
 				955178D62448BF8600D857F8 /* ContentView.swift in Sources */,
 				954E82512454833F001EE44A /* CompleteSessionView.swift in Sources */,
 				95A3DAB7244A624000E7E4E5 /* DetailedWorkoutView.swift in Sources */,
@@ -332,6 +347,7 @@
 				95A3DAB5244A06A300E7E4E5 /* SeedData.swift in Sources */,
 				954E825324549EB9001EE44A /* WorkoutSession+Extension.swift in Sources */,
 				9546DA0A244938D2004922BC /* ExercisesView.swift in Sources */,
+				951D7E32245E0DDF007E0017 /* Theme.swift in Sources */,
 				95747D3A245A7836008F1193 /* PilatesExercises.swift in Sources */,
 				9508066724493714006B42D3 /* ClientsView.swift in Sources */,
 			);
@@ -658,25 +674,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		9581502A245DDCB100E12DF6 /* XCRemoteSwiftPackageReference "BasicThemeKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:dangdennis/BasicThemeKit.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9581502B245DDCB100E12DF6 /* BasicThemeKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9581502A245DDCB100E12DF6 /* XCRemoteSwiftPackageReference "BasicThemeKit" */;
-			productName = BasicThemeKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		95A3DAB1244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld */ = {
