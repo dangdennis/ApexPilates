@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,7 @@
 		9556625724490607005BF19A /* Workout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556625624490607005BF19A /* Workout+Extension.swift */; };
 		955662592449061B005BF19A /* Exercise+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955662582449061B005BF19A /* Exercise+Extension.swift */; };
 		95747D3A245A7836008F1193 /* PilatesExercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95747D39245A7836008F1193 /* PilatesExercises.swift */; };
+		9581502C245DDCB100E12DF6 /* BasicThemeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9581502B245DDCB100E12DF6 /* BasicThemeKit */; };
 		95A3DAB3244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95A3DAB1244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld */; };
 		95A3DAB5244A06A300E7E4E5 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3DAB4244A06A300E7E4E5 /* SeedData.swift */; };
 		95A3DAB7244A624000E7E4E5 /* DetailedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3DAB6244A624000E7E4E5 /* DetailedWorkoutView.swift */; };
@@ -84,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9581502C245DDCB100E12DF6 /* BasicThemeKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +196,9 @@
 			dependencies = (
 			);
 			name = "Apex Pilates";
+			packageProductDependencies = (
+				9581502B245DDCB100E12DF6 /* BasicThemeKit */,
+			);
 			productName = "Apex Pilates";
 			productReference = 955178CB2448BF8600D857F8 /* Apex Pilates.app */;
 			productType = "com.apple.product-type.application";
@@ -266,6 +271,9 @@
 				Base,
 			);
 			mainGroup = 955178C22448BF8600D857F8;
+			packageReferences = (
+				9581502A245DDCB100E12DF6 /* XCRemoteSwiftPackageReference "BasicThemeKit" */,
+			);
 			productRefGroup = 955178CC2448BF8600D857F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -650,6 +658,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9581502A245DDCB100E12DF6 /* XCRemoteSwiftPackageReference "BasicThemeKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:dangdennis/BasicThemeKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9581502B245DDCB100E12DF6 /* BasicThemeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9581502A245DDCB100E12DF6 /* XCRemoteSwiftPackageReference "BasicThemeKit" */;
+			productName = BasicThemeKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		95A3DAB1244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld */ = {

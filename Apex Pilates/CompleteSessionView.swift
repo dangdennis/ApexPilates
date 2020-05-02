@@ -39,7 +39,7 @@ struct CompleteSessionView: View {
         sess.title = self.sessionTitle
         
         let s = (workout.exercises?.allObjects ?? []) as [Exercise]
-            
+        
         var selection: [Exercise] = []
         for e in s {
             if selectedExercises[e.wrappedID] != nil {
@@ -50,26 +50,38 @@ struct CompleteSessionView: View {
         sess.addToExercises(NSSet(array: selection))
         
         client.addToWorkoutSessions(sess)
+        
         presentation.wrappedValue.dismiss()
+    }
+    
+    private func selectExercise(id: String) {
+        guard let prevState = self.selectedExercises[id] else {
+            self.selectedExercises[id] = true
+            return
+        }
+        
+        self.selectedExercises[id] = !prevState
     }
     
     var body: some View {
         VStack(alignment: .leading) {
             ZStack {
                 List {
-                    ForEach(self.visibleExercises, id: \.self) { (exercise: Exercise) in
-                        HStack {
-                            Text(exercise.wrappedName)
-                            self.selectedExercises[exercise.wrappedID] ?? false
-                                ? Image(systemName: "checkmark.circle.fill")
-                                : Image(systemName: "checkmark.circle")
+                    ForEach(self.visibleExercises) { (exercise: Exercise) in
+                        Button(action: {
                             
-                        }.onTapGesture {
-                            if let prevState = self.selectedExercises[exercise.wrappedID] {
-                                self.selectedExercises[exercise.wrappedID] = !prevState
-                            } else {
-                                self.selectedExercises[exercise.wrappedID] = true
+                            self.selectExercise(id: exercise.wrappedID)
+                            
+                        }) {
+                            HStack {
+                                Text(exercise.wrappedName)
+                                Spacer()
+                                if self.selectedExercises[exercise.wrappedID] ?? false {
+                                    Image(systemName: "checkmark.circle.fill")
+                                }
+                                
                             }
+                            
                         }
                     }
                 }.actionSheet(isPresented: $isOpen, content: {

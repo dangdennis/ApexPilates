@@ -26,3 +26,5 @@ struct DetailedSessionView_Previews: PreviewProvider {
         return DetailedSessionView(session: sess)
     }
 }
+   
+

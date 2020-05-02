@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import BasicThemeKit
 
 
 struct DetailedClientView: View {
@@ -47,6 +48,32 @@ struct DetailedClientView_Previews: PreviewProvider {
 
 struct AllWorkoutsView: View {
     var client: Client
+    @Environment(\.managedObjectContext) var context
+    @FetchRequest(entity: Workout.entity(), sortDescriptors: []) var allWorkouts: FetchedResults<Workout>
+    
+    @State private var sheetOpen = false
+    @State private var selectedWorkouts: [String: Bool] = [:]
+    
+    private func selectWorkout(id: String) {
+        guard let prevState = self.selectedWorkouts[id] else {
+            self.selectedWorkouts[id] = true
+            return
+        }
+        
+        self.selectedWorkouts[id] = !prevState
+    }
+    
+    private func addWorkouts() {
+        var selection: [Workout] = []
+        for workout in allWorkouts {
+            if selectedWorkouts[workout.wrappedID.uuidString] != nil {
+                selection.append(workout)
+            }
+        }
+        
+        client.addToWorkouts(NSSet(array: selection))
+    }
+    
     var body: some View {
         List {
             ForEach(client.wrappedWorkouts) { workout in
@@ -55,14 +82,54 @@ struct AllWorkoutsView: View {
                 }
             }
         }
+        .navigationBarItems(trailing: Button(action: {
+            self.sheetOpen.toggle()
+        }) {
+            Text("Add")
+        })
+            .sheet(isPresented: $sheetOpen) {
+                VStack {
+                    Text("Select to add")
+                        .h3()
+                    List {
+                        ForEach(self.allWorkouts) { (workout: Workout) in
+                            Button(action: {
+                                self.selectWorkout(id: workout.wrappedID.uuidString)
+                            }) {
+                                HStack {
+                                    Text(workout.wrappedName)
+                                    Spacer()
+                                    if self.selectedWorkouts[workout.wrappedID.uuidString] ?? false {
+                                        Image(systemName: "checkmark.circle.fill")
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    Spacer()
+                    Button(action: {
+                        self.addWorkouts()
+                        self.sheetOpen.toggle()
+                    }) {
+                        HStack {
+                            Text("Add")
+                            Image(systemName: "plus")
+                        }
+                    }
+                    .frame(width: 100)
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.black)
+                    .cornerRadius(40)
+                    
+                }.padding(.top, 24)
+        }
     }
 }
 
 struct AllSessionsView: View {
     var client: Client
     var body: some View {
-        print(client)
-        
         return List {
             ForEach(client.wrappedWorkoutSessions) { session in
                 NavigationLink(destination: DetailedSessionView(session: session)) {
