@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ClientsView: View {
     @Environment(\.managedObjectContext) var context
+    
     @FetchRequest(
         entity: Client.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Client.name, ascending: false)]
@@ -20,15 +21,16 @@ struct ClientsView: View {
     var body: some View {
         return NavigationView {
             VStack(alignment: .leading) {
+                TextField("Enter client's name", text: $name, onCommit: addClient)
+                    .padding(.bottom, 20)
+                    .padding(.leading, 20)
+                
                 List(allClients, id: \.id) { client in
                     NavigationLink(destination: DetailedClientView(client: client)) {
                         Text(client.name ?? "")
                     }
                 }
                 Spacer()
-                TextField("Enter client's name", text: $name, onCommit: addClient)
-                    .padding(.bottom, 20)
-                    .padding(.leading, 20)
             }
             .navigationBarTitle(Text("Clients"))
         }

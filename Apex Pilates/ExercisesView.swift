@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ExercisesView: View {
     @Environment(\.managedObjectContext) var context
+    
     @FetchRequest(
         entity: Exercise.entity(),
         sortDescriptors: [
@@ -18,49 +19,60 @@ struct ExercisesView: View {
             NSSortDescriptor(keyPath: \Exercise.order, ascending: true)
         ]
     ) var allExercises: FetchedResults<Exercise>
+    
+    // Exercise name input
     @State private var name = ""
+    
+    // Exercise type picker
+    @State private var selectedExerciseType = 0
     
     var body: some View {
         NavigationView {
             VStack() {
-                
-                List {
-                    Section(header: Text("Mat")) {
-                        ForEach(allExercises.filter{ $0.type == "mat" }) { workout in
-                            Text(workout.name ?? "")
-                        }.onDelete(perform: deleteExercise)
-                    }.listStyle(GroupedListStyle())
-                    
-                    Section(header: Text("Reformer")) {
-                        ForEach(allExercises.filter{ $0.type == "reformer" }) { workout in
-                            Text(workout.name ?? "")
-                        }.onDelete(perform: deleteExercise)
-                    }.listStyle(GroupedListStyle())
-                    
-                    Section(header: Text("Cadillac")) {
-                        ForEach(allExercises.filter{ $0.type == "cadillac" }) { workout in
-                            Text(workout.name ?? "")
-                        }.onDelete(perform: deleteExercise)
-                    }.listStyle(GroupedListStyle())
-                    
-                    Section(header: Text("Wunda")) {
-                        ForEach(allExercises.filter{ $0.type == "wundaChair" }) { workout in
-                            Text(workout.name ?? "")
-                        }.onDelete(perform: deleteExercise)
-                    }.listStyle(GroupedListStyle())
-                    
-                    Section(header: Text("Spine Corrector")) {
-                        ForEach(allExercises.filter{ $0.type == "spineCorrector" }) { workout in
-                            Text(workout.name ?? "")
-                        }.onDelete(perform: deleteExercise)
-                    }.listStyle(GroupedListStyle())
+                Form {
+                    Section {
+                        TextField("Exercise name", text: $name, onCommit: addExercise)
+                        Picker(selection: $selectedExerciseType, label: Text("Exercise type")) {
+                            ForEach(0 ..< workoutTemplates.count) {
+                                Text(workoutTemplates[$0].name)
+                            }
+                        }
+                        Button(action: addExercise) {
+                            Text("Submit")
+                        }
+                    }
+                    Group {
+                        Section(header: Text("Mat")) {
+                            ForEach(allExercises.filter{ $0.type == "mat" }) { workout in
+                                Text(workout.name ?? "")
+                            }.onDelete(perform: deleteExercise)
+                        }
+                        
+                        Section(header: Text("Reformer")) {
+                            ForEach(allExercises.filter{ $0.type == "reformer" }) { workout in
+                                Text(workout.name ?? "")
+                            }.onDelete(perform: deleteExercise)
+                        }
+                        
+                        Section(header: Text("Cadillac")) {
+                            ForEach(allExercises.filter{ $0.type == "cadillac" }) { workout in
+                                Text(workout.name ?? "")
+                            }.onDelete(perform: deleteExercise)
+                        }
+                        
+                        Section(header: Text("Wunda")) {
+                            ForEach(allExercises.filter{ $0.type == "wundaChair" }) { workout in
+                                Text(workout.name ?? "")
+                            }.onDelete(perform: deleteExercise)
+                        }
+                        
+                        Section(header: Text("Spine Corrector")) {
+                            ForEach(allExercises.filter{ $0.type == "spineCorrector" }) { workout in
+                                Text(workout.name ?? "")
+                            }.onDelete(perform: deleteExercise)
+                        }
+                    }
                 }
-                
-                Spacer()
-                
-                TextField("Enter exercise name", text: $name, onCommit: addExercise)
-                    .padding(.bottom, 20)
-                    .padding(.leading, 20)
             }
             .navigationBarItems(trailing: EditButton())
             .navigationBarTitle(Text("Exercises"))
@@ -75,9 +87,14 @@ struct ExercisesView: View {
     }
     
     func addExercise() {
+        if name == "" {
+            return
+        }
+        
         let newExercise = Exercise(context: context)
         newExercise.id = UUID()
         newExercise.name = name
+        newExercise.type = workoutTemplates[selectedExerciseType].type
         
         do {
             try context.save()

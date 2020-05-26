@@ -73,13 +73,20 @@ struct AllWorkoutsView: View {
         client.addToWorkouts(NSSet(array: selection))
     }
     
+    private func deleteWorkout(offsets: IndexSet) {
+//        for i in offsets {
+//            let workout = self.allWorkouts[i]
+//            self.context.delete(workout)
+//        }
+    }
+    
     var body: some View {
         List {
             ForEach(client.wrappedWorkouts) { workout in
                 NavigationLink(destination: CompleteSessionView(workout: workout, client: self.client)) {
                     Text(workout.wrappedName)
                 }
-            }
+            }.onDelete(perform: self.deleteWorkout)
         }
         .navigationBarItems(trailing: Button(action: {
             self.sheetOpen.toggle()
@@ -88,7 +95,7 @@ struct AllWorkoutsView: View {
         })
             .sheet(isPresented: $sheetOpen) {
                 VStack {
-                    Text("Select to add")
+                    Text("Start new session")
                         .h3()
                     List {
                         ForEach(self.allWorkouts) { (workout: Workout) in
@@ -127,9 +134,20 @@ struct AllWorkoutsView: View {
 }
 
 struct AllSessionsView: View {
+    @Environment(\.managedObjectContext) var context
     var client: Client
+    
+    private func deleteSession(offsets: IndexSet) {
+        for i in offsets {
+//            print("i", i)
+//            print("offsets", offsets.)
+            print("client's sessions", self.client.wrappedWorkoutSessions)
+//            self.context.delete(session)
+        }
+    }
+    
     var body: some View {
-        return List {
+        List {
             ForEach(client.wrappedWorkoutSessions) { session in
                 NavigationLink(destination: DetailedSessionView(session: session)) {
                     HStack {
@@ -137,7 +155,9 @@ struct AllSessionsView: View {
                         Text(session.wrappedCompletionDate)
                     }
                 }
-            }
-        }
+            }.onDelete(perform: self.deleteSession)
+        }.navigationBarItems(trailing: EditButton())
     }
+    
+    
 }

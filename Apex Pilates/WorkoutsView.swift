@@ -16,6 +16,9 @@ struct WorkoutsView: View {
     var body: some View {
         NavigationView {
             VStack {
+                TextField("Enter workout name", text: $name, onCommit: addWorkout)
+                    .padding(.leading, 20)
+                
                 List {
                     ForEach(allWorkouts) { workout in
                         NavigationLink(destination: DetailedWorkoutView(workout: workout)) {
@@ -25,10 +28,6 @@ struct WorkoutsView: View {
                 }
                 
                 Spacer()
-                
-                TextField("Enter workout name", text: $name, onCommit: addWorkout)
-                    .padding(.bottom, 20)
-                    .padding(.leading, 20)
             }
             .navigationBarItems(trailing: EditButton())
             .navigationBarTitle(Text("Workouts"))

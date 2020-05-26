@@ -10,6 +10,14 @@ import SwiftUI
 import Foundation
 import CoreData
 
+let workoutTemplates = [
+    (name: "Pilates Mat", type: "mat"),
+    (name: "Reformer", type: "reformer"),
+    (name: "Cadillac", type: "cadillac"),
+    (name: "Wunda Chair", type: "wundaChair"),
+    (name: "Spine Corrector", type: "spineCorrector")
+]
+
 public class SeedData {
     let context: NSManagedObjectContext
     
@@ -52,14 +60,6 @@ public class SeedData {
     
     
     func seedWorkouts() {
-        let workoutTemplates = [
-            (name: "Pilates Mat", type: "mat"),
-            (name: "Reformer", type: "reformer"),
-            (name: "Cadillac", type: "cadillac"),
-            (name: "Wunda Chair", type: "wundaChair"),
-            (name: "Spine Corrector", type: "spineCorrector")
-        ]
-        
         let allExercises: [Exercise] = findAllEntities(type: "Exercise")
         
         for workout in workoutTemplates {

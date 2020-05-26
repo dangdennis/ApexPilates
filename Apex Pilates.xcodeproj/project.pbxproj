@@ -140,17 +140,17 @@
 		955178CD2448BF8600D857F8 /* Apex Pilates */ = {
 			isa = PBXGroup;
 			children = (
-				951D7E30245E0D5E007E0017 /* BasicTheme */,
 				95A3DAB1244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld */,
 				955178CE2448BF8600D857F8 /* AppDelegate.swift */,
 				955178D72448BF8700D857F8 /* Assets.xcassets */,
+				951D7E30245E0D5E007E0017 /* BasicTheme */,
 				955662542449058E005BF19A /* Client+Extension.swift */,
 				9508066624493714006B42D3 /* ClientsView.swift */,
-				954E82502454833F001EE44A /* CompleteSessionView.swift */,
 				951D7E2A245E0D32007E0017 /* Colors.swift */,
-				951D7E2B245E0D32007E0017 /* Sizes.swift */,
+				954E82502454833F001EE44A /* CompleteSessionView.swift */,
 				955178D52448BF8600D857F8 /* ContentView.swift */,
 				95A3DAB8244AAE3B00E7E4E5 /* DetailedClientView.swift */,
+				95B419AC245C6C2A003AA07E /* DetailedSessionView.swift */,
 				95A3DAB6244A624000E7E4E5 /* DetailedWorkoutView.swift */,
 				955662582449061B005BF19A /* Exercise+Extension.swift */,
 				9546DA09244938D2004922BC /* ExercisesView.swift */,
@@ -160,11 +160,11 @@
 				955178D92448BF8700D857F8 /* Preview Content */,
 				955178D02448BF8600D857F8 /* SceneDelegate.swift */,
 				95A3DAB4244A06A300E7E4E5 /* SeedData.swift */,
+				951D7E2B245E0D32007E0017 /* Sizes.swift */,
+				951D7E31245E0DDF007E0017 /* Theme.swift */,
 				9556625624490607005BF19A /* Workout+Extension.swift */,
 				954E825224549EB9001EE44A /* WorkoutSession+Extension.swift */,
 				950806642449367E006B42D3 /* WorkoutsView.swift */,
-				95B419AC245C6C2A003AA07E /* DetailedSessionView.swift */,
-				951D7E31245E0DDF007E0017 /* Theme.swift */,
 			);
 			path = "Apex Pilates";
 			sourceTree = "<group>";
@@ -514,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Apex Pilates/Preview Content\"";
 				DEVELOPMENT_TEAM = G77X5S4B8C;
@@ -525,6 +526,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dlab.app.Apex-Pilates";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -534,6 +536,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Apex Pilates/Preview Content\"";
 				DEVELOPMENT_TEAM = G77X5S4B8C;
@@ -545,6 +548,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dlab.app.Apex-Pilates";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -9,6 +9,8 @@
 import Foundation
 
 extension Exercise: Identifiable {
+    static let exerciseTypes = [""]
+    
     public var wrappedName: String {
         self.name ?? "Unknown Exercise"
     }
