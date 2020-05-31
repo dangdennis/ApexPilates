@@ -11,7 +11,6 @@ import SwiftUI
 struct CompleteSessionView: View {
     @Environment(\.managedObjectContext) var context
     @Environment(\.presentationMode) var presentation
-    
     var workout: Workout
     var client: Client
     
@@ -20,6 +19,15 @@ struct CompleteSessionView: View {
     @State private var selectedExercises: [String: Bool] = [:]
     @State private var isOpen = false
     @State private var onlyChecked = false
+    
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }
+    
+    @State private var completionDate = Date()
+    
     
     private var visibleExercises: [Exercise] {
         return workout.wrappedExercises.filter({ exercise in
@@ -32,6 +40,10 @@ struct CompleteSessionView: View {
     
     // completeSession adds a new session of completed exercises for the prescribed client
     private func completeSession() {
+        if self.sessionTitle.isEmpty {
+            return
+        }
+        
         let d = Date()
         let sess = WorkoutSession(context: self.context)
         sess.completedOn = d
@@ -48,10 +60,9 @@ struct CompleteSessionView: View {
         }
         
         sess.addToExercises(NSSet(array: selection))
-        
         client.addToWorkoutSessions(sess)
-        
         presentation.wrappedValue.dismiss()
+        self.showPopover.toggle()
     }
     
     private func selectExercise(id: String) {
@@ -59,7 +70,6 @@ struct CompleteSessionView: View {
             self.selectedExercises[id] = true
             return
         }
-        
         self.selectedExercises[id] = !prevState
     }
     
@@ -69,9 +79,7 @@ struct CompleteSessionView: View {
                 List {
                     ForEach(self.visibleExercises) { (exercise: Exercise) in
                         Button(action: {
-                            
                             self.selectExercise(id: exercise.wrappedID)
-                            
                         }) {
                             HStack {
                                 Text(exercise.wrappedName)
@@ -79,28 +87,25 @@ struct CompleteSessionView: View {
                                 if self.selectedExercises[exercise.wrappedID] ?? false {
                                     Image(systemName: "checkmark.circle.fill")
                                 }
-                                
                             }
-                            
                         }
                     }
                 }.actionSheet(isPresented: $isOpen, content: {
                     ActionSheet(
                         title: Text("Filter"),
                         buttons: [
-                            .default(Text("Show Only Checked"), action: { self.onlyChecked = true }),
-                            .default(Text("Complete workout"), action: { self.completeSession() }),
-                            .cancel(Text("Show All"), action: { self.onlyChecked = false })
-                    ])
+                            .default(Text(onlyChecked ? "Show all" : "Show only selected"), action: {
+                                self.onlyChecked.toggle()
+                            }),
+                            .cancel(Text("Cancel"))
+                        ]
+                    )
                 })
                 
                 VStack {
                     Spacer()
-                    
-                    
                     HStack {
                         Spacer()
-                        
                         Button(action: {
                             self.isOpen.toggle()
                         }) {
@@ -110,40 +115,40 @@ struct CompleteSessionView: View {
                             .font(.system(.title))
                             .frame(width: 70, height: 70)
                             .foregroundColor(Color.white)
-                        }.background(Color.black)
-                            .cornerRadius(100)
-                            .padding(.trailing, 20)
-                            .padding(.bottom, 10)
-                            .shadow(color: Color.black.opacity(0.3),
-                                    radius: 3,
-                                    x: 3,
-                                    y: 3)
+                        }
+                        .background(Color.black)
+                        .cornerRadius(100)
+                        .padding(.trailing, 20)
+                        .padding(.bottom, 10)
+                        .shadow(color: Color.black.opacity(0.3),
+                                radius: 3,
+                                x: 3,
+                                y: 3)
                     }
-                    
                 }
             }
         }
         .popover( isPresented: self.$showPopover, arrowEdge: .bottom) {
-            VStack {
-                Text("Name your session")
-                HStack {
+            Text("Session Details")
+                .padding(.top, 16)
+            Form {
+                Section {
                     TextField("Title", text: self.$sessionTitle, onCommit: {
                         self.completeSession()
                         self.showPopover.toggle()
                     })
-                    Spacer()
+                    
+                    DatePicker(selection: self.$completionDate, in: ...Date(), displayedComponents: .date) {
+                        Text("Select a date")
+                    }
+                    
                     Button(action: {
                         self.completeSession()
-                        self.showPopover.toggle()
                     }) {
                         Text("Submit")
                     }
                 }
-                
-                Spacer()
             }
-            .padding(16)
-            .padding(.top, 16)
         }
         .navigationBarItems(trailing: Button(action: {
             self.showPopover.toggle()

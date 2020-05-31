@@ -48,11 +48,15 @@ struct DetailedClientView_Previews: PreviewProvider {
 struct AllWorkoutsView: View {
     var client: Client
     @Environment(\.managedObjectContext) var context
+    
+    // fetch all workouts ahead of time so user can assign workouts to their client
     @FetchRequest(entity: Workout.entity(), sortDescriptors: []) var allWorkouts: FetchedResults<Workout>
     
+    // state to manage addition of new workouts
     @State private var sheetOpen = false
     @State private var selectedWorkouts: [String: Bool] = [:]
     
+    // store a map of workouts that have been selected for assignment to client
     private func selectWorkout(id: String) {
         guard let prevState = self.selectedWorkouts[id] else {
             self.selectedWorkouts[id] = true
@@ -62,22 +66,21 @@ struct AllWorkoutsView: View {
         self.selectedWorkouts[id] = !prevState
     }
     
+    // add a workout to a client's list of assigned workouts
     private func addWorkouts() {
-        var selection: [Workout] = []
         for workout in allWorkouts {
             if selectedWorkouts[workout.wrappedID.uuidString] != nil {
-                selection.append(workout)
+                client.addToWorkouts(workout)
             }
         }
-        
-        client.addToWorkouts(NSSet(array: selection))
     }
     
+    // remove a client's assigned workout
     private func deleteWorkout(offsets: IndexSet) {
-//        for i in offsets {
-//            let workout = self.allWorkouts[i]
-//            self.context.delete(workout)
-//        }
+        for i in offsets {
+            let workout = client.wrappedWorkouts[i]
+            client.removeFromWorkouts(workout)
+        }
     }
     
     var body: some View {
@@ -137,26 +140,17 @@ struct AllSessionsView: View {
     @Environment(\.managedObjectContext) var context
     var client: Client
     
-    private func deleteSession(offsets: IndexSet) {
-        for i in offsets {
-//            print("i", i)
-//            print("offsets", offsets.)
-            print("client's sessions", self.client.wrappedWorkoutSessions)
-//            self.context.delete(session)
-        }
-    }
-    
     var body: some View {
         List {
-            ForEach(client.wrappedWorkoutSessions) { session in
+            ForEach(self.client.wrappedWorkoutSessions) { (session: WorkoutSession) in
                 NavigationLink(destination: DetailedSessionView(session: session)) {
                     HStack {
                         Text(session.wrappedTitle)
                         Text(session.wrappedCompletionDate)
                     }
                 }
-            }.onDelete(perform: self.deleteSession)
-        }.navigationBarItems(trailing: EditButton())
+            }
+        }.navigationBarItems(trailing: Text(""))
     }
     
     
