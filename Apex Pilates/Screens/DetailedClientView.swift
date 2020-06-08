@@ -139,10 +139,21 @@ struct AllWorkoutsView: View {
 struct AllSessionsView: View {
     @Environment(\.managedObjectContext) var context
     var client: Client
+    var sessionsRequest: FetchRequest<WorkoutSession>
+    var sessions: FetchedResults<WorkoutSession>{sessionsRequest.wrappedValue}
+    
+    init(client: Client) {
+        self.client = client
+        self.sessionsRequest = FetchRequest(
+            entity: WorkoutSession.entity(),
+            sortDescriptors: [],
+            predicate: NSPredicate(format: "%K == %@", #keyPath(WorkoutSession.clients), client)
+        )
+    }
     
     var body: some View {
         List {
-            ForEach(self.client.wrappedWorkoutSessions) { (session: WorkoutSession) in
+            ForEach(sessions) { (session: WorkoutSession) in
                 NavigationLink(destination: DetailedSessionView(session: session)) {
                     HStack {
                         Text(session.wrappedTitle)
@@ -152,6 +163,4 @@ struct AllSessionsView: View {
             }
         }.navigationBarItems(trailing: Text(""))
     }
-    
-    
 }

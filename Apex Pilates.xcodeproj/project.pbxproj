@@ -32,6 +32,8 @@
 		95A3DAB7244A624000E7E4E5 /* DetailedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3DAB6244A624000E7E4E5 /* DetailedWorkoutView.swift */; };
 		95A3DAB9244AAE3B00E7E4E5 /* DetailedClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A3DAB8244AAE3B00E7E4E5 /* DetailedClientView.swift */; };
 		95B419AD245C6C2A003AA07E /* DetailedSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B419AC245C6C2A003AA07E /* DetailedSessionView.swift */; };
+		95F766A6248DB02200E49302 /* AddToWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F766A5248DB02200E49302 /* AddToWorkoutView.swift */; };
+		95F766AD248DB98D00E49302 /* ExerciseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F766AC248DB98D00E49302 /* ExerciseList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		95A3DAB6244A624000E7E4E5 /* DetailedWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedWorkoutView.swift; sourceTree = "<group>"; };
 		95A3DAB8244AAE3B00E7E4E5 /* DetailedClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedClientView.swift; sourceTree = "<group>"; };
 		95B419AC245C6C2A003AA07E /* DetailedSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedSessionView.swift; sourceTree = "<group>"; };
+		95F766A5248DB02200E49302 /* AddToWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToWorkoutView.swift; sourceTree = "<group>"; };
+		95F766AC248DB98D00E49302 /* ExerciseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,13 +114,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		951D7E30245E0D5E007E0017 /* BasicTheme */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BasicTheme;
-			sourceTree = "<group>";
-		};
 		955178C22448BF8600D857F8 = {
 			isa = PBXGroup;
 			children = (
@@ -140,31 +137,17 @@
 		955178CD2448BF8600D857F8 /* Apex Pilates */ = {
 			isa = PBXGroup;
 			children = (
+				95F766AA248DB96A00E49302 /* Components */,
 				95A3DAB1244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld */,
 				955178CE2448BF8600D857F8 /* AppDelegate.swift */,
 				955178D72448BF8700D857F8 /* Assets.xcassets */,
-				951D7E30245E0D5E007E0017 /* BasicTheme */,
-				955662542449058E005BF19A /* Client+Extension.swift */,
-				9508066624493714006B42D3 /* ClientsView.swift */,
-				951D7E2A245E0D32007E0017 /* Colors.swift */,
-				954E82502454833F001EE44A /* CompleteSessionView.swift */,
-				955178D52448BF8600D857F8 /* ContentView.swift */,
-				95A3DAB8244AAE3B00E7E4E5 /* DetailedClientView.swift */,
-				95B419AC245C6C2A003AA07E /* DetailedSessionView.swift */,
-				95A3DAB6244A624000E7E4E5 /* DetailedWorkoutView.swift */,
-				955662582449061B005BF19A /* Exercise+Extension.swift */,
-				9546DA09244938D2004922BC /* ExercisesView.swift */,
+				95F766A9248DB93400E49302 /* Constants */,
 				955178DF2448BF8700D857F8 /* Info.plist */,
 				955178DC2448BF8700D857F8 /* LaunchScreen.storyboard */,
-				95747D39245A7836008F1193 /* PilatesExercises.swift */,
+				95F766A8248DB8F600E49302 /* Models */,
 				955178D92448BF8700D857F8 /* Preview Content */,
 				955178D02448BF8600D857F8 /* SceneDelegate.swift */,
-				95A3DAB4244A06A300E7E4E5 /* SeedData.swift */,
-				951D7E2B245E0D32007E0017 /* Sizes.swift */,
-				951D7E31245E0DDF007E0017 /* Theme.swift */,
-				9556625624490607005BF19A /* Workout+Extension.swift */,
-				954E825224549EB9001EE44A /* WorkoutSession+Extension.swift */,
-				950806642449367E006B42D3 /* WorkoutsView.swift */,
+				95F766A7248DB8BA00E49302 /* Screens */,
 			);
 			path = "Apex Pilates";
 			sourceTree = "<group>";
@@ -193,6 +176,53 @@
 				955178F52448BF8700D857F8 /* Info.plist */,
 			);
 			path = "Apex PilatesUITests";
+			sourceTree = "<group>";
+		};
+		95F766A7248DB8BA00E49302 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9508066624493714006B42D3 /* ClientsView.swift */,
+				954E82502454833F001EE44A /* CompleteSessionView.swift */,
+				955178D52448BF8600D857F8 /* ContentView.swift */,
+				95A3DAB8244AAE3B00E7E4E5 /* DetailedClientView.swift */,
+				95B419AC245C6C2A003AA07E /* DetailedSessionView.swift */,
+				95A3DAB6244A624000E7E4E5 /* DetailedWorkoutView.swift */,
+				9546DA09244938D2004922BC /* ExercisesView.swift */,
+				950806642449367E006B42D3 /* WorkoutsView.swift */,
+				95F766A5248DB02200E49302 /* AddToWorkoutView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		95F766A8248DB8F600E49302 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95A3DAB4244A06A300E7E4E5 /* SeedData.swift */,
+				9556625624490607005BF19A /* Workout+Extension.swift */,
+				955662542449058E005BF19A /* Client+Extension.swift */,
+				955662582449061B005BF19A /* Exercise+Extension.swift */,
+				95747D39245A7836008F1193 /* PilatesExercises.swift */,
+				954E825224549EB9001EE44A /* WorkoutSession+Extension.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		95F766A9248DB93400E49302 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				951D7E2B245E0D32007E0017 /* Sizes.swift */,
+				951D7E31245E0DDF007E0017 /* Theme.swift */,
+				951D7E2A245E0D32007E0017 /* Colors.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		95F766AA248DB96A00E49302 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				95F766AC248DB98D00E49302 /* ExerciseList.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,11 +373,13 @@
 				954E82512454833F001EE44A /* CompleteSessionView.swift in Sources */,
 				95A3DAB7244A624000E7E4E5 /* DetailedWorkoutView.swift in Sources */,
 				950806652449367E006B42D3 /* WorkoutsView.swift in Sources */,
+				95F766A6248DB02200E49302 /* AddToWorkoutView.swift in Sources */,
 				955178D12448BF8600D857F8 /* SceneDelegate.swift in Sources */,
 				95A3DAB5244A06A300E7E4E5 /* SeedData.swift in Sources */,
 				954E825324549EB9001EE44A /* WorkoutSession+Extension.swift in Sources */,
 				9546DA0A244938D2004922BC /* ExercisesView.swift in Sources */,
 				951D7E32245E0DDF007E0017 /* Theme.swift in Sources */,
+				95F766AD248DB98D00E49302 /* ExerciseList.swift in Sources */,
 				95747D3A245A7836008F1193 /* PilatesExercises.swift in Sources */,
 				9508066724493714006B42D3 /* ClientsView.swift in Sources */,
 			);
@@ -524,7 +556,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dlab.app.Apex-Pilates";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlab.app.ApexPilates;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -546,7 +578,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dlab.app.Apex-Pilates";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dlab.app.ApexPilates;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

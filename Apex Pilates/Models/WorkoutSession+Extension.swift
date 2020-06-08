@@ -14,12 +14,12 @@ extension WorkoutSession: Identifiable {
     }
     
     public var wrappedTitle: String {
-        self.title ?? ""
+        self.title ?? "Recently Deleted"
     }
     
     public var wrappedCompletionDate: String {
         guard let d = completedOn else {
-            return "No completion date"
+            return ""
         }
         let fmt = DateFormatter()
         fmt.timeStyle = .medium
