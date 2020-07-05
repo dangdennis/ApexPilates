@@ -50,10 +50,14 @@ struct CompleteSessionView: View {
         sess.id = UUID()
         sess.title = self.sessionTitle
         
-        let s = (workout.exercises?.allObjects ?? []) as [Exercise]
+        let s = (workout.exercises?.allObjects ?? []) as? [Exercise]
+        
+        guard let allExercises = s else {
+            return
+        }
         
         var selection: [Exercise] = []
-        for e in s {
+        for e in allExercises {
             if selectedExercises[e.wrappedID] != nil {
                 selection.append(e)
             }
@@ -161,8 +165,8 @@ struct CompleteSessionView: View {
 
 struct CompleteSessionView_Previews: PreviewProvider {
     static var previews: some View {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let workout = SeedData().workout()
+        let context = persistentStore.persistentContainer.viewContext
+        let workout = SeedData(context: context).workout()
         return DetailedWorkoutView(workout: workout).environment(\.managedObjectContext, context)
     }
 }

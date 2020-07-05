@@ -12,11 +12,11 @@
 		951D7E2D245E0D32007E0017 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D7E2A245E0D32007E0017 /* Colors.swift */; };
 		951D7E2E245E0D32007E0017 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D7E2B245E0D32007E0017 /* Sizes.swift */; };
 		951D7E32245E0DDF007E0017 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D7E31245E0DDF007E0017 /* Theme.swift */; };
+		953B265224A68DA900C50577 /* ApexPilatesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953B265124A68DA900C50577 /* ApexPilatesApp.swift */; };
+		953C54EA24B171DF00787C65 /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C54E924B171DF00787C65 /* PersistentStore.swift */; };
 		9546DA0A244938D2004922BC /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9546DA09244938D2004922BC /* ExercisesView.swift */; };
 		954E82512454833F001EE44A /* CompleteSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E82502454833F001EE44A /* CompleteSessionView.swift */; };
 		954E825324549EB9001EE44A /* WorkoutSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E825224549EB9001EE44A /* WorkoutSession+Extension.swift */; };
-		955178CF2448BF8600D857F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955178CE2448BF8600D857F8 /* AppDelegate.swift */; };
-		955178D12448BF8600D857F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955178D02448BF8600D857F8 /* SceneDelegate.swift */; };
 		955178D62448BF8600D857F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955178D52448BF8600D857F8 /* ContentView.swift */; };
 		955178D82448BF8700D857F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955178D72448BF8700D857F8 /* Assets.xcassets */; };
 		955178DB2448BF8700D857F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955178DA2448BF8700D857F8 /* Preview Assets.xcassets */; };
@@ -59,12 +59,12 @@
 		951D7E2A245E0D32007E0017 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		951D7E2B245E0D32007E0017 /* Sizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
 		951D7E31245E0DDF007E0017 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		953B265124A68DA900C50577 /* ApexPilatesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexPilatesApp.swift; sourceTree = "<group>"; };
+		953C54E924B171DF00787C65 /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
 		9546DA09244938D2004922BC /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
 		954E82502454833F001EE44A /* CompleteSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSessionView.swift; sourceTree = "<group>"; };
 		954E825224549EB9001EE44A /* WorkoutSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkoutSession+Extension.swift"; sourceTree = "<group>"; };
 		955178CB2448BF8600D857F8 /* Apex Pilates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apex Pilates.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		955178CE2448BF8600D857F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		955178D02448BF8600D857F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		955178D52448BF8600D857F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		955178D72448BF8700D857F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		955178DA2448BF8700D857F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -114,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		953C54E824B171CE00787C65 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				953C54E924B171DF00787C65 /* PersistentStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
 		955178C22448BF8600D857F8 = {
 			isa = PBXGroup;
 			children = (
@@ -137,17 +145,17 @@
 		955178CD2448BF8600D857F8 /* Apex Pilates */ = {
 			isa = PBXGroup;
 			children = (
-				95F766AA248DB96A00E49302 /* Components */,
 				95A3DAB1244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld */,
-				955178CE2448BF8600D857F8 /* AppDelegate.swift */,
+				953B265124A68DA900C50577 /* ApexPilatesApp.swift */,
 				955178D72448BF8700D857F8 /* Assets.xcassets */,
+				95F766AA248DB96A00E49302 /* Components */,
 				95F766A9248DB93400E49302 /* Constants */,
 				955178DF2448BF8700D857F8 /* Info.plist */,
 				955178DC2448BF8700D857F8 /* LaunchScreen.storyboard */,
 				95F766A8248DB8F600E49302 /* Models */,
 				955178D92448BF8700D857F8 /* Preview Content */,
-				955178D02448BF8600D857F8 /* SceneDelegate.swift */,
 				95F766A7248DB8BA00E49302 /* Screens */,
+				953C54E824B171CE00787C65 /* Stores */,
 			);
 			path = "Apex Pilates";
 			sourceTree = "<group>";
@@ -290,7 +298,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = dlab;
 				TargetAttributes = {
 					955178CA2448BF8600D857F8 = {
@@ -360,21 +368,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				955178CF2448BF8600D857F8 /* AppDelegate.swift in Sources */,
 				951D7E2D245E0D32007E0017 /* Colors.swift in Sources */,
 				955662552449058E005BF19A /* Client+Extension.swift in Sources */,
 				95B419AD245C6C2A003AA07E /* DetailedSessionView.swift in Sources */,
+				953B265224A68DA900C50577 /* ApexPilatesApp.swift in Sources */,
 				955662592449061B005BF19A /* Exercise+Extension.swift in Sources */,
 				95A3DAB9244AAE3B00E7E4E5 /* DetailedClientView.swift in Sources */,
 				9556625724490607005BF19A /* Workout+Extension.swift in Sources */,
 				95A3DAB3244A032400E7E4E5 /* Apex_Pilates.xcdatamodeld in Sources */,
+				953C54EA24B171DF00787C65 /* PersistentStore.swift in Sources */,
 				951D7E2E245E0D32007E0017 /* Sizes.swift in Sources */,
 				955178D62448BF8600D857F8 /* ContentView.swift in Sources */,
 				954E82512454833F001EE44A /* CompleteSessionView.swift in Sources */,
 				95A3DAB7244A624000E7E4E5 /* DetailedWorkoutView.swift in Sources */,
 				950806652449367E006B42D3 /* WorkoutsView.swift in Sources */,
 				95F766A6248DB02200E49302 /* AddToWorkoutView.swift in Sources */,
-				955178D12448BF8600D857F8 /* SceneDelegate.swift in Sources */,
 				95A3DAB5244A06A300E7E4E5 /* SeedData.swift in Sources */,
 				954E825324549EB9001EE44A /* WorkoutSession+Extension.swift in Sources */,
 				9546DA0A244938D2004922BC /* ExercisesView.swift in Sources */,
@@ -454,6 +462,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -478,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -514,6 +523,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -532,7 +542,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

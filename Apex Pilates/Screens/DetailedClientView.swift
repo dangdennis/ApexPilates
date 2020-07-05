@@ -36,9 +36,9 @@ struct DetailedClientView: View {
 
 struct DetailedClientView_Previews: PreviewProvider {
     static var previews: some View {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = persistentStore.persistentContainer.viewContext
         
-        let seeder = SeedData()
+        let seeder = SeedData(context: context)
         let client = seeder.client()
         
         return DetailedClientView(client: client).environment(\.managedObjectContext, context)

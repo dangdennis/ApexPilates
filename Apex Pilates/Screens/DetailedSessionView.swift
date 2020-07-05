@@ -35,7 +35,7 @@ struct DetailedSessionView: View {
 
 struct DetailedSessionView_Previews: PreviewProvider {
     static var previews: some View {
-        let seedData = SeedData()
+        let seedData = SeedData(context: persistentStore.persistentContainer.viewContext)
         let sess = seedData.workoutSession()
         return DetailedSessionView(session: sess)
     }

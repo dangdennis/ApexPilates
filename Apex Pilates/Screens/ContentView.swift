@@ -34,7 +34,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = persistentStore.persistentContainer.viewContext
         return ContentView().environment(\.managedObjectContext, context)
     }
 }

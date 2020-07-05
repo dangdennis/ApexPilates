@@ -62,7 +62,7 @@ struct WorkoutsView: View {
 
 struct WorkoutsView_Previews: PreviewProvider {
     static var previews: some View {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = persistentStore.persistentContainer.viewContext
         return WorkoutsView().environment(\.managedObjectContext, context)
     }
 }

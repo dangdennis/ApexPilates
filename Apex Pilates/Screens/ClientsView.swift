@@ -57,7 +57,7 @@ struct ClientsView: View {
 
 struct ClientsView_Previews: PreviewProvider {
     static var previews: some View {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = persistentStore.persistentContainer.viewContext
         return ClientsView().environment(\.managedObjectContext, context)
     }
 }

@@ -27,9 +27,9 @@ struct DetailedWorkoutView: View {
 
 struct DetailedWorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = persistentStore.persistentContainer.viewContext
         
-        let workout = SeedData().workout()
+        let workout = SeedData(context: persistentStore.persistentContainer.viewContext).workout()
         
         return DetailedWorkoutView(workout: workout).environment(\.managedObjectContext, context)
     }

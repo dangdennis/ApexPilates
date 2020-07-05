@@ -21,9 +21,8 @@ let workoutTemplates = [
 public class SeedData {
     let context: NSManagedObjectContext
     
-    init() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.context = appDelegate.persistentContainer.viewContext
+    init(context: NSManagedObjectContext) {
+        self.context = context
         self.deleteAll()
         self.seedExercises()
         self.seedWorkouts()
