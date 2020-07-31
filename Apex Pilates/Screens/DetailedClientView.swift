@@ -94,7 +94,7 @@ struct AllWorkoutsView: View {
         .navigationBarItems(trailing: Button(action: {
             self.sheetOpen.toggle()
         }) {
-            Text("Add")
+            Text("New")
         })
             .sheet(isPresented: $sheetOpen) {
                 VStack {
